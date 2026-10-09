@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b415jukp6e8ga"]
+
+[ext_resource type="Texture2D" uid="uid://y4efjvjfp7h" path="res://Assets/Sprites/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="1_kbje7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iawal"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ya2"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h5xh"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_111y1"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr3uq"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83uxi"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iah1w"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c6gm"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jhc0"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c2jw"]
+atlas = ExtResource("1_kbje7")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpl7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iawal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ya2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h5xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_111y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr3uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83uxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iah1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c6gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jhc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2jw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 11.0
+}]
+
+[node name="ChrisScene" type="Node2D" unique_id=1322240798]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218321179]
+position = Vector2(299, 264)
+scale = Vector2(2.25, 2.25)
+sprite_frames = SubResource("SpriteFrames_qpl7a")
+frame_progress = 0.24295138
