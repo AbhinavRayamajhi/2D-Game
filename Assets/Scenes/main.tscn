@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://csee1kbkb7fge" path="res://Assets/Sprites/Background.png" id="1_l26l0"]
 [ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Scenes/coin.tscn" id="2_qplxx"]
 [ext_resource type="Texture2D" uid="uid://dxe33gsmutkgn" path="res://Assets/Sprites/Brown_Tile_Terrain (16 x 16).png" id="3_elf4b"]
+[ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="4_guoxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_guoxd"]
 texture = ExtResource("3_elf4b")
@@ -182,3 +183,6 @@ position = Vector2(-117, 70)
 texture_filter = 1
 tile_map_data = PackedByteArray("AADu/wgAAQAGAAYAAADv/wgAAQAGAAYAAADw/wgAAQAGAAYAAADx/wgAAQAGAAYAAADy/wgAAQAGAAYAAADz/wgAAQAGAAYAAAD0/wgAAQAGAAYAAAD1/wgAAQAGAAYAAAD2/wgAAQANAAQAAAD2/wkAAQAFAAUAAAD1/wkAAQABAAMAAAD0/wkAAQAJAAMAAADz/wkAAQABAAMAAAD4/wUAAQACAAsAAAD5/wUAAQALAAsAAAD6/wUAAQAUAAsAAAD8/wMAAQAaAAsAAAD9/wMAAQADAAsAAAD+/wMAAQAMAAsAAADy/wkAAQARAAMAAADx/wkAAQABAAMAAADv/wkAAQABAAMAAADu/wkAAQABAAMAAADw/wkAAQAZAAMAAAA=")
 tile_set = SubResource("TileSet_t1gp5")
+
+[node name="Player" parent="." unique_id=1154877071 instance=ExtResource("4_guoxd")]
+position = Vector2(-221, 97)
