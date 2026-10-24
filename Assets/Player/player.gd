@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -17,6 +17,7 @@ var is_boost_cooldown = false
 var facing_direction = 1.0
 
 func _ready() -> void:
+	
 	boost_timer.timeout.connect(stop_boost)
 	boost_cooldown.timeout.connect(boost_cooldown_reset)
 
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * SPEED
 			animated_sprite_2d.flip_h = direction < 0
 				
-			if not is_jumping:
+			if not is_jumping :
 				animated_sprite_2d.play("walk")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)

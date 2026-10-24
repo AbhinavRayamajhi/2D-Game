@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cogf44ov76c3u"]
 
-[ext_resource type="Script" uid="uid://dbskcvlcs1oq5" path="res://Assets/Player/Player.gd" id="1_ftc6t"]
+[ext_resource type="Script" uid="uid://dbskcvlcs1oq5" path="res://Assets/Player/player.gd" id="1_ftc6t"]
 [ext_resource type="Texture2D" uid="uid://c35nahv8rr756" path="res://Assets/Player/idle.png" id="1_t6mta"]
 [ext_resource type="Texture2D" uid="uid://cfot013h44qh7" path="res://Assets/Player/boost.png" id="2_33wup"]
 [ext_resource type="Texture2D" uid="uid://c2d0j8qumytdc" path="res://Assets/Player/walk.png" id="2_a52ai"]
@@ -165,7 +165,7 @@ animation = &"boost"
 frame_progress = 0.861089
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1763178728]
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(1.6, 1.6)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1643561575]
 polygon = PackedVector2Array(3, 0, -30, 0, -30, 32, 29, 32, 29, -21, 3, -21)
