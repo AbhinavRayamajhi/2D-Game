@@ -2,8 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dbskcvlcs1oq5" path="res://Assets/Player/Player.gd" id="1_ftc6t"]
 [ext_resource type="Texture2D" uid="uid://c35nahv8rr756" path="res://Assets/Player/idle.png" id="1_t6mta"]
+[ext_resource type="Texture2D" uid="uid://cfot013h44qh7" path="res://Assets/Player/boost.png" id="2_33wup"]
 [ext_resource type="Texture2D" uid="uid://c2d0j8qumytdc" path="res://Assets/Player/walk.png" id="2_a52ai"]
 [ext_resource type="Texture2D" uid="uid://bsifkxpl7hxlb" path="res://Assets/Player/jump.png" id="2_ftc6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_motui"]
+atlas = ExtResource("2_33wup")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjvuq"]
+atlas = ExtResource("2_33wup")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6mta"]
 atlas = ExtResource("1_t6mta")
@@ -71,6 +80,17 @@ region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1gp5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_motui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjvuq")
+}],
+"loop": 1,
+"name": &"boost",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t6mta")
@@ -141,10 +161,17 @@ script = ExtResource("1_ftc6t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1154877071]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t1gp5")
-animation = &"jump"
+animation = &"boost"
+frame_progress = 0.861089
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1763178728]
 zoom = Vector2(1.7, 1.7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1643561575]
 polygon = PackedVector2Array(3, 0, -30, 0, -30, 32, 29, 32, 29, -21, 3, -21)
+
+[node name="BoostTimer" type="Timer" parent="." unique_id=1376120585]
+one_shot = true
+
+[node name="BoostCooldown" type="Timer" parent="." unique_id=645070608]
+one_shot = true
