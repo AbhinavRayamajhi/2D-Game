@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://h4w4dx8t1evb" path="res://Assets/Scenes/Scene 1/Tiles/tiled rocks.png" id="2_k1smo"]
 [ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/player.tscn" id="3_dqf12"]
 [ext_resource type="Texture2D" uid="uid://bqogbsb4q8uhl" path="res://Assets/Scenes/Scene 1/Background/myst.png" id="4_k1smo"]
+[ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="5_sj4uh"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="6_rq81t"]
+[ext_resource type="AudioStream" uid="uid://bwqfm6b8we6rl" path="res://Assets/Music/cosmic-drift-moire-main-version-39705-02-08.mp3" id="8_brr1c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq757"]
 texture = ExtResource("2_k1smo")
@@ -114,6 +116,23 @@ tile_set = SubResource("TileSet_1l4rv")
 
 [node name="Player" parent="." unique_id=482659332 instance=ExtResource("3_dqf12")]
 
+[node name="Coins" type="Node" parent="." unique_id=1542456037]
+
+[node name="Coin" parent="Coins" unique_id=1571938756 instance=ExtResource("5_sj4uh")]
+position = Vector2(477, 2)
+
+[node name="Coin2" parent="Coins" unique_id=1705639325 instance=ExtResource("5_sj4uh")]
+position = Vector2(672, 1)
+
+[node name="Coin3" parent="Coins" unique_id=200663567 instance=ExtResource("5_sj4uh")]
+position = Vector2(863, 3)
+
+[node name="Coin4" parent="Coins" unique_id=796045546 instance=ExtResource("5_sj4uh")]
+position = Vector2(1055, -1)
+
+[node name="Coin5" parent="Coins" unique_id=343780641 instance=ExtResource("5_sj4uh")]
+position = Vector2(1241, 0)
+
 [node name="Parallax2D_FG" type="Parallax2D" parent="." unique_id=1553841358]
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(0, 150)
@@ -145,6 +164,11 @@ shape = SubResource("RectangleShape2D_t1gp5")
 
 [node name="Fan" parent="." unique_id=1103289012 instance=ExtResource("6_rq81t")]
 position = Vector2(2729, 111)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=304490775]
+stream = ExtResource("8_brr1c")
+volume_db = -20.07
+autoplay = true
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]

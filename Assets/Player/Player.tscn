@@ -165,6 +165,7 @@ animation = &"boost"
 frame_progress = 0.861089
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1763178728]
+offset = Vector2(0, -20)
 zoom = Vector2(1.6, 1.6)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1643561575]
