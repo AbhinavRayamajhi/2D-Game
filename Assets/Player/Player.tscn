@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cfot013h44qh7" path="res://Assets/Player/boost.png" id="2_33wup"]
 [ext_resource type="Texture2D" uid="uid://c2d0j8qumytdc" path="res://Assets/Player/walk.png" id="2_a52ai"]
 [ext_resource type="Texture2D" uid="uid://bsifkxpl7hxlb" path="res://Assets/Player/jump.png" id="2_ftc6t"]
+[ext_resource type="Script" uid="uid://b6c68tm44k25p" path="res://Assets/Player/hud.gd" id="6_aqk3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_motui"]
 atlas = ExtResource("2_33wup")
@@ -155,6 +156,25 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_rul8u"]
+offsets = PackedFloat32Array(0, 0.0064935065, 0.019480519)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kg0wl"]
+gradient = SubResource("Gradient_rul8u")
+width = 50
+height = 6
+fill_from = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_aqk3a"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rul8u"]
+gradient = SubResource("Gradient_aqk3a")
+width = 50
+height = 6
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0.0091743115, 0.9954128)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=482659332]
 script = ExtResource("1_ftc6t")
 
@@ -167,6 +187,7 @@ frame_progress = 0.861089
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1763178728]
 offset = Vector2(0, -20)
 zoom = Vector2(1.6, 1.6)
+position_smoothing_speed = 20.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1643561575]
 polygon = PackedVector2Array(3, 0, -30, 0, -30, 32, 29, 32, 29, -21, 3, -21)
@@ -176,3 +197,29 @@ one_shot = true
 
 [node name="BoostCooldown" type="Timer" parent="." unique_id=645070608]
 one_shot = true
+
+[node name="HUD" type="Control" parent="." unique_id=1345663949]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_aqk3a")
+
+[node name="Coins" type="Label" parent="HUD" unique_id=1169972552]
+layout_mode = 0
+offset_left = 272.0
+offset_top = -201.0
+offset_right = 312.0
+offset_bottom = -178.0
+
+[node name="Stamina" type="TextureProgressBar" parent="HUD" unique_id=1497033515]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 41.0
+offset_bottom = -27.0
+max_value = 1000.0
+texture_under = SubResource("GradientTexture2D_kg0wl")
+texture_progress = SubResource("GradientTexture2D_rul8u")
+tint_under = Color(0.29411766, 0.29411766, 0.29411766, 0.80784315)
+tint_progress = Color(0.39607844, 1, 0.078431375, 1)

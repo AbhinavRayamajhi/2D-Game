@@ -133,6 +133,30 @@ position = Vector2(1055, -1)
 [node name="Coin5" parent="Coins" unique_id=343780641 instance=ExtResource("5_sj4uh")]
 position = Vector2(1241, 0)
 
+[node name="Coin6" parent="Coins" unique_id=1679758447 instance=ExtResource("5_sj4uh")]
+position = Vector2(1349, 1)
+
+[node name="Coin7" parent="Coins" unique_id=1507440879 instance=ExtResource("5_sj4uh")]
+position = Vector2(1445, 1)
+
+[node name="Coin8" parent="Coins" unique_id=277719900 instance=ExtResource("5_sj4uh")]
+position = Vector2(1824, 0)
+
+[node name="Coin9" parent="Coins" unique_id=1101783792 instance=ExtResource("5_sj4uh")]
+position = Vector2(1885, 0)
+
+[node name="Coin10" parent="Coins" unique_id=1515681175 instance=ExtResource("5_sj4uh")]
+position = Vector2(1946, 1)
+
+[node name="Coin11" parent="Coins" unique_id=1565299525 instance=ExtResource("5_sj4uh")]
+position = Vector2(2400, 1)
+
+[node name="Coin12" parent="Coins" unique_id=496418461 instance=ExtResource("5_sj4uh")]
+position = Vector2(2493, -3)
+
+[node name="Coin13" parent="Coins" unique_id=1281935980 instance=ExtResource("5_sj4uh")]
+position = Vector2(2587, 0)
+
 [node name="Parallax2D_FG" type="Parallax2D" parent="." unique_id=1553841358]
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(0, 150)
@@ -167,7 +191,7 @@ position = Vector2(2729, 111)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=304490775]
 stream = ExtResource("8_brr1c")
-volume_db = -20.07
+volume_db = -25.544
 autoplay = true
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
