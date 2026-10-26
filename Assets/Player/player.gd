@@ -27,7 +27,15 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		is_jumping = false #if on floor not jumping
-
+	
+	# No movement allowed if no stamina
+	# Need to add a game over thing
+	if Global.stamina <= 0:
+		animated_sprite_2d.play("idle")
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		move_and_slide()
+		return
+		
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
 	
