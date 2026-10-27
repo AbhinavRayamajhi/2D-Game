@@ -48,7 +48,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("boost")
 	else:
 		if direction:
-			Global.stamina -= 1
+			if is_on_floor():
+				Global.stamina -= 1
 			velocity.x = direction * SPEED
 			animated_sprite_2d.flip_h = direction < 0
 				
