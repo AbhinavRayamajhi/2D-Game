@@ -1,5 +1,16 @@
 [gd_scene format=3 uid="uid://bf5qwj517jc0m"]
 
+[ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Scenes/Main Menu/Eastwood.ttf" id="1_jwbto"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf2bk"]
+bg_color = Color(0.6329419, 0.63292587, 0.1641804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvm24"]
+
 [node name="Control" type="Control" unique_id=887634260]
 layout_mode = 3
 anchors_preset = 8
@@ -18,10 +29,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -120.0
-offset_right = 140.0
-offset_bottom = 120.0
+offset_left = -172.0
+offset_top = -140.0
+offset_right = 108.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.24067411, 0.42397964, 0.20014006, 1)
+theme_override_fonts/font = ExtResource("1_jwbto")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nf2bk")
 text = "Start Game"
+icon = SubResource("AtlasTexture_mvm24")
