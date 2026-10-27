@@ -3,3 +3,14 @@ extends Node
 # Global
 var current_coins:int = 0
 var stamina:int = 1000
+
+var scene_1_cleared:bool = false
+var scene_2_cleared:bool = false
+
+func scene_cleared(scene: String) -> void:
+	if scene == "Scene 1":
+		scene_1_cleared = true
+	elif scene == "Scene 2":
+		scene_2_cleared = true
+	else:
+		print("Invalid Scene argument for scene_cleared")

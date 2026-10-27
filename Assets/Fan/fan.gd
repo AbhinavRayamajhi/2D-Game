@@ -1,6 +1,6 @@
 extends Node2D
 
-var FAN_SPEED = -700
+var FAN_SPEED = -600
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
