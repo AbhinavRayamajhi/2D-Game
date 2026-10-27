@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cec5d6vqac3cv"]
+
+[ext_resource type="Script" uid="uid://cre3d6012ihyw" path="res://Assets/Level Select/level_select.gd" id="1_nb0ai"]
+[ext_resource type="Texture2D" uid="uid://dgiisckd00w6d" path="res://Assets/Level Select/Images/map.webp" id="1_qlsm8"]
+[ext_resource type="Texture2D" uid="uid://n84cvuohw8qu" path="res://Assets/Level Select/Images/cave.webp" id="2_073de"]
+[ext_resource type="Texture2D" uid="uid://b7j5bdqtkw3o4" path="res://Assets/Level Select/Images/images.png" id="4_3cohm"]
+
+[node name="LevelSelect" type="Node2D" unique_id=1681085335]
+script = ExtResource("1_nb0ai")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=2066064752]
+texture_filter = 1
+position = Vector2(-4.9999995, 21)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_qlsm8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=768380935]
+
+[node name="Cave" type="TextureButton" parent="." unique_id=2042417720]
+offset_left = -514.0
+offset_top = -74.0
+offset_right = -457.0
+offset_bottom = -18.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Cave" unique_id=1080715412]
+position = Vector2(31, 29)
+scale = Vector2(0.06234375, 0.05921874)
+texture = ExtResource("2_073de")
+
+[node name="Factory" type="TextureButton" parent="." unique_id=1030018394]
+offset_left = -309.0
+offset_top = -5.0
+offset_right = -208.0
+offset_bottom = 92.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Factory" unique_id=393889833]
+texture_filter = 1
+position = Vector2(58.000008, 47)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_3cohm")
+
+[node name="Label" type="Label" parent="." unique_id=2088447254]
+offset_left = 429.0
+offset_top = -319.0
+offset_right = 697.0
+offset_bottom = -185.0
+theme_override_colors/font_color = Color(0.82678765, 0.23170415, 0.022259798, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 34
+
+[connection signal="pressed" from="Cave" to="." method="_on_cave_pressed"]
+[connection signal="pressed" from="Factory" to="." method="_on_factory_pressed"]
