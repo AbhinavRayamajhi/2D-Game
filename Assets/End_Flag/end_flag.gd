@@ -6,7 +6,7 @@ extends Node2D
 
 @export var scene_name: String
 
-var end_label_duration = 1.5
+var end_label_duration = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
