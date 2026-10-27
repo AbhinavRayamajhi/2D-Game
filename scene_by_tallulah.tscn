@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ur5hw7gcyges"]
+
+[ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="1_wyyy8"]
+
+[sub_resource type="TileSet" id="TileSet_nf2bk"]
+
+[node name="scene 2 by tal (to be decided)" type="Node2D" unique_id=1719315261]
+
+[node name="Player" parent="." unique_id=482659332 instance=ExtResource("1_wyyy8")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1079399403]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1543933281]
+tile_set = SubResource("TileSet_nf2bk")
+format = 2
