@@ -2,17 +2,65 @@
 
 [ext_resource type="Script" uid="uid://cyopsotmgyqir" path="res://Assets/Main Menu/start_menu.gd" id="1_8tr0v"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_jwbto"]
+[ext_resource type="Texture2D" uid="uid://wt1rjynswic" path="res://Assets/Main Menu/origbig.png" id="2_1n6dy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h331j"]
+texture = ExtResource("2_1n6dy")
+modulate_color = Color(0.74348193, 0.74348193, 0.74348193, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf2bk"]
-bg_color = Color(0.6329419, 0.63292587, 0.1641804, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.7613302, 0.7613112, 0.20550683, 1)
+skew = Vector2(1.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18631536, 0.21209751, 0.11774104, 0.58400005)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.22091639, 0.24780053, 0.1428257, 0.49500003)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fttt3"]
+bg_color = Color(0.2716998, 0.2716998, 0.85754526, 1)
+skew = Vector2(1.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18631536, 0.21209751, 0.11774104, 0.58400005)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.22091639, 0.24780053, 0.1428257, 0.49500003)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n6dy"]
+bg_color = Color(0.58277535, 0.5827293, 0.1466681, 1)
+skew = Vector2(1.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.18631536, 0.21209751, 0.11774104, 0.58400005)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.22091639, 0.24780053, 0.1428257, 0.49500003)
+shadow_size = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n6dy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvm24"]
 
-[node name="Control" type="Control" unique_id=887634260]
+[sub_resource type="Theme" id="Theme_h331j"]
+default_font = ExtResource("1_jwbto")
+
+[node name="main menu" type="Control" unique_id=887634260]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,30 +73,35 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.34
 script = ExtResource("1_8tr0v")
 
+[node name="bg" type="Panel" parent="." unique_id=900733521]
+layout_mode = 1
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 580.0
+offset_bottom = 330.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_h331j")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1002191595]
 layout_mode = 0
-offset_left = -241.0
-offset_top = -129.0
-offset_right = 254.0
-offset_bottom = 155.0
+offset_left = -250.0
+offset_top = -86.0
+offset_right = 171.6
+offset_bottom = 155.88768
+scale = Vector2(1.2, 1.2)
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=2069367110]
 layout_mode = 2
+size_flags_stretch_ratio = 2.45
 theme_override_colors/font_color = Color(0.24067411, 0.42397964, 0.20014006, 1)
 theme_override_fonts/font = ExtResource("1_jwbto")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_nf2bk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fttt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1n6dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1n6dy")
 text = "Start Game"
-icon = SubResource("AtlasTexture_mvm24")
-
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=2006720913]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.24067411, 0.42397964, 0.20014006, 1)
-theme_override_fonts/font = ExtResource("1_jwbto")
-theme_override_font_sizes/font_size = 31
-theme_override_styles/normal = SubResource("StyleBoxFlat_nf2bk")
-text = "exit"
 icon = SubResource("AtlasTexture_mvm24")
 
 [node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=1323892049]
@@ -57,8 +110,48 @@ theme_override_colors/font_color = Color(0.24067411, 0.42397964, 0.20014006, 1)
 theme_override_fonts/font = ExtResource("1_jwbto")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_nf2bk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fttt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1n6dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1n6dy")
 text = "Tutorial"
 icon = SubResource("AtlasTexture_mvm24")
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=2006720913]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24067411, 0.42397964, 0.20014006, 1)
+theme_override_fonts/font = ExtResource("1_jwbto")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nf2bk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fttt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1n6dy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1n6dy")
+text = "exit"
+icon = SubResource("AtlasTexture_mvm24")
+
+[node name="title" type="Label" parent="." unique_id=300204146]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -311.0
+offset_top = -250.0
+offset_right = 324.0
+offset_bottom = -126.0
+grow_horizontal = 2
+theme = SubResource("Theme_h331j")
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.8235294, 0.8666667, 0.7176471, 1)
+theme_override_colors/font_shadow_color = Color(0.24255794, 0.2761006, 0.16050395, 0.78039217)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 17
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("1_jwbto")
+theme_override_font_sizes/font_size = 80
+text = "insert name here"
+horizontal_alignment = 1
+uppercase = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
