@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if direction:
 			if is_on_floor():
-				Global.stamina -= 1
+				Global.stamina -= 2
 			velocity.x = direction * SPEED
 			animated_sprite_2d.flip_h = direction < 0
 				
@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 			
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		Global.stamina -= 2
+		Global.stamina -= 5
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 		animated_sprite_2d.play("jump")
@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func start_boost() -> void:
-	Global.stamina -= 4
+	Global.stamina -= 10
 	is_boosting = true
 	is_boost_cooldown = true
 	boost_timer.start(BOOST_DURATION)

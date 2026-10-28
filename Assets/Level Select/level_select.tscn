@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://dgiisckd00w6d" path="res://Assets/Level Select/Images/map.webp" id="1_qlsm8"]
 [ext_resource type="Texture2D" uid="uid://n84cvuohw8qu" path="res://Assets/Level Select/Images/cave.webp" id="2_073de"]
 [ext_resource type="Texture2D" uid="uid://b7j5bdqtkw3o4" path="res://Assets/Level Select/Images/images.png" id="4_3cohm"]
+[ext_resource type="Texture2D" uid="uid://br2hkdqthuo2s" path="res://Assets/Level Select/Images/complete.png" id="5_q5rsi"]
+[ext_resource type="Texture2D" uid="uid://cflmroxfj23br" path="res://Assets/Level Select/Images/Back_button.png" id="6_5o328"]
 
 [node name="LevelSelect" type="Node2D" unique_id=1681085335]
 script = ExtResource("1_nb0ai")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2066064752]
 texture_filter = 1
-position = Vector2(-4.9999995, 21)
+position = Vector2(-3, 26.000002)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_qlsm8")
 
@@ -27,7 +29,17 @@ position = Vector2(31, 29)
 scale = Vector2(0.06234375, 0.05921874)
 texture = ExtResource("2_073de")
 
+[node name="Label" type="Label" parent="Cave" unique_id=1163285665]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 59.0
+offset_right = 66.0
+offset_bottom = 82.0
+theme_override_constants/outline_size = 4
+text = "1. Cave"
+
 [node name="Factory" type="TextureButton" parent="." unique_id=1030018394]
+visible = false
 offset_left = -309.0
 offset_top = -5.0
 offset_right = -208.0
@@ -39,14 +51,63 @@ position = Vector2(58.000008, 47)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_3cohm")
 
-[node name="Label" type="Label" parent="." unique_id=2088447254]
-offset_left = 429.0
-offset_top = -319.0
-offset_right = 697.0
-offset_bottom = -185.0
+[node name="Label" type="Label" parent="Factory" unique_id=72664388]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 90.0
+offset_right = 99.0
+offset_bottom = 113.0
+theme_override_constants/outline_size = 4
+text = "2. Factory"
+
+[node name="Coins" type="Label" parent="." unique_id=2088447254]
+offset_left = 405.0
+offset_top = -320.0
+offset_right = 570.0
+offset_bottom = -249.0
 theme_override_colors/font_color = Color(0.82678765, 0.23170415, 0.022259798, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 34
 
+[node name="Stamina" type="Label" parent="." unique_id=2005407014]
+offset_left = -572.0
+offset_top = -319.0
+offset_right = -407.0
+offset_bottom = -248.0
+theme_override_colors/font_color = Color(0.82678765, 0.23170415, 0.022259798, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 34
+
+[node name="CaveComplete" type="Sprite2D" parent="." unique_id=1890042621]
+visible = false
+position = Vector2(-480, -41.999992)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_q5rsi")
+
+[node name="FactoryComplete" type="Sprite2D" parent="." unique_id=609222314]
+visible = false
+position = Vector2(-245.00002, 55.999992)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_q5rsi")
+
+[node name="Back" type="TextureButton" parent="." unique_id=380289957]
+offset_left = -524.0
+offset_top = 231.0
+offset_right = 85.091064
+offset_bottom = 487.0
+scale = Vector2(0.22, 0.22)
+
+[node name="Sprite2D" type="Sprite2D" parent="Back" unique_id=650533552]
+position = Vector2(300, 127.27273)
+scale = Vector2(0.8684306, 1)
+texture = ExtResource("6_5o328")
+
+[connection signal="mouse_entered" from="Cave" to="." method="_on_cave_mouse_entered"]
+[connection signal="mouse_exited" from="Cave" to="." method="_on_cave_mouse_exited"]
 [connection signal="pressed" from="Cave" to="." method="_on_cave_pressed"]
+[connection signal="mouse_entered" from="Factory" to="." method="_on_factory_mouse_entered"]
+[connection signal="mouse_exited" from="Factory" to="." method="_on_factory_mouse_exited"]
 [connection signal="pressed" from="Factory" to="." method="_on_factory_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="." method="_on_back_mouse_exited"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://djst6vlui2wtj"
-path="res://.godot/imported/Eastwood.ttf-f77ad06dfa113508ea640264efe45c7d.fontdata"
+path="res://.godot/imported/Eastwood.ttf-6da4b4f832fc105f9b75bffdaad1fcb5.fontdata"
 
 [deps]
 
-source_file="res://Assets/Scenes/Main Menu/Eastwood.ttf"
-dest_files=["res://.godot/imported/Eastwood.ttf-f77ad06dfa113508ea640264efe45c7d.fontdata"]
+source_file="res://Assets/Main Menu/Eastwood.ttf"
+dest_files=["res://.godot/imported/Eastwood.ttf-6da4b4f832fc105f9b75bffdaad1fcb5.fontdata"]
 
 [params]
 
