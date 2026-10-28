@@ -176,13 +176,14 @@ fill_from = Vector2(0, 1)
 fill_to = Vector2(0.0091743115, 0.9954128)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=482659332]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ftc6t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1154877071]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t1gp5")
-animation = &"boost"
-frame_progress = 0.861089
+animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1763178728]
 offset = Vector2(0, -20)

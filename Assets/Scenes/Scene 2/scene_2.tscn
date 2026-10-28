@@ -127,6 +127,7 @@ position = Vector2(2962, 84)
 position = Vector2(3091, 84)
 
 [node name="Death Plane" type="Area2D" parent="." unique_id=1865859411]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death Plane" unique_id=808167808]
 position = Vector2(590.8333, -134.16666)
@@ -136,12 +137,14 @@ shape = SubResource("WorldBoundaryShape2D_pc5pt")
 
 [node name="Checkpoint 1" type="Area2D" parent="Checkpoints" unique_id=782819262]
 position = Vector2(1776, 66)
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint 1" unique_id=530454240]
 shape = SubResource("RectangleShape2D_3gase")
 
 [node name="Checkpoint 2" type="Area2D" parent="Checkpoints" unique_id=651269511]
 position = Vector2(3023, 62)
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint 2" unique_id=1972887678]
 shape = SubResource("RectangleShape2D_3gase")
