@@ -6,6 +6,7 @@ var stamina:int = 1000
 
 var scene_1_cleared:bool = false
 var scene_2_cleared:bool = false
+var indgredients: int = 0
 
 func scene_cleared(scene: String) -> void:
 	if scene == "Scene 1":

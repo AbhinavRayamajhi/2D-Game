@@ -14,8 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bwqfm6b8we6rl" path="res://Assets/Music/cosmic-drift-moire-main-version-39705-02-08.mp3" id="8_brr1c"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="8_pokee"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="12_fr884"]
-[ext_resource type="PackedScene" uid="uid://qw78juin4mth" path="res://Assets/food/burger.tscn" id="15_yasws"]
-[ext_resource type="PackedScene" uid="uid://derjvoejk6u5n" path="res://Assets/food/tomato_counter.tscn" id="16_5haqo"]
+[ext_resource type="PackedScene" uid="uid://di5lg063mnw3c" path="res://Assets/food/tomato.tscn" id="15_yasws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq757"]
 texture = ExtResource("2_k1smo")
@@ -273,16 +272,7 @@ shape = SubResource("WorldBoundaryShape2D_06db0")
 
 [node name="Food" type="Node" parent="." unique_id=947094039]
 
-[node name="tomato counter" parent="Food" unique_id=1719315261 instance=ExtResource("16_5haqo")]
-position = Vector2(-470, -169)
-
-[node name="tomato" type="Node" parent="Food" unique_id=8962483]
-
-[node name="tomato" parent="Food/tomato" unique_id=1788165784 instance=ExtResource("15_yasws")]
-position = Vector2(777, -106)
-scale = Vector2(1.3111626, 1.3111626)
-
-[node name="tomato counter" parent="." unique_id=2088631715 instance=ExtResource("16_5haqo")]
+[node name="tomato" parent="Food" unique_id=1788165784 instance=ExtResource("15_yasws")]
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]
