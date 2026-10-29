@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d0j8qumytdc" path="res://Assets/Player/walk.png" id="2_a52ai"]
 [ext_resource type="Texture2D" uid="uid://bsifkxpl7hxlb" path="res://Assets/Player/jump.png" id="2_ftc6t"]
 [ext_resource type="Script" uid="uid://b6c68tm44k25p" path="res://Assets/Player/hud.gd" id="6_aqk3a"]
+[ext_resource type="PackedScene" uid="uid://derjvoejk6u5n" path="res://Assets/food/tomato_counter.tscn" id="7_se03x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_motui"]
 atlas = ExtResource("2_33wup")
@@ -224,3 +225,7 @@ texture_under = SubResource("GradientTexture2D_kg0wl")
 texture_progress = SubResource("GradientTexture2D_rul8u")
 tint_under = Color(0.29411766, 0.29411766, 0.29411766, 0.80784315)
 tint_progress = Color(0.39607844, 1, 0.078431375, 1)
+
+[node name="food counters" parent="HUD" unique_id=1719315261 instance=ExtResource("7_se03x")]
+scale = Vector2(1, 1)
+script = null
