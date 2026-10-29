@@ -275,7 +275,7 @@ shape = SubResource("WorldBoundaryShape2D_06db0")
 [node name="burger" type="Node" parent="food" unique_id=8962483]
 
 [node name="burger" parent="food/burger" unique_id=1788165784 instance=ExtResource("15_yasws")]
-position = Vector2(333, -18)
+position = Vector2(334, -49)
 scale = Vector2(1.3111626, 1.3111626)
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]

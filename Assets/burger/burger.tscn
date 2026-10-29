@@ -35,11 +35,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_h331j"]
 
 [node name="burger" type="Area2D" unique_id=1788165784]
+collision_mask = 2
 script = ExtResource("1_30tfp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1564734363]
 sprite_frames = SubResource("SpriteFrames_nf2bk")
-frame_progress = 0.859014
+frame_progress = 0.7962575
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943006069]
 shape = SubResource("CircleShape2D_h331j")
