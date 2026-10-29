@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ur5hw7gcyges"]
 
-[ext_resource type="Texture2D" uid="uid://bsm1cg7odlmw6" path="res://Assets/Sprites/15_burger.png" id="1_st43p"]
+[ext_resource type="Texture2D" uid="uid://bsm1cg7odlmw6" path="res://Assets/burger/15_burger.png" id="1_st43p"]
 [ext_resource type="Script" uid="uid://bw05o1u5ajnpo" path="res://scene_by_tallulah.gd" id="1_xiij0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5fyg"]
