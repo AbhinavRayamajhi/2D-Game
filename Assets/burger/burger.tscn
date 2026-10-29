@@ -34,10 +34,8 @@ animations = [{
 script = ExtResource("1_30tfp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1564734363]
-position = Vector2(72, 10)
 sprite_frames = SubResource("SpriteFrames_nf2bk")
 frame_progress = 0.32277286
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943006069]
-position = Vector2(72, 10)
 shape = SubResource("CircleShape2D_h331j")
