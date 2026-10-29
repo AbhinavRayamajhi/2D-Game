@@ -3,6 +3,7 @@ extends Node2D
 @onready var end_label: Label = $"../End_Label"
 @onready var end_timer: Timer = $"../End_Label/End_Timer"
 @onready var scene: Node2D = $".."
+@onready var enemy: CharacterBody2D = $"../Enemy"
 
 @export var scene_name: String
 

@@ -89,7 +89,7 @@ func attack():
 	if not attacking:
 		return
 	animated_sprite_2d.play("attack")
-	Global.stamina -= 5
+	Global.stamina -= 20
 	$AttackTimer.start()
 
 func jump_air_time() -> float:
