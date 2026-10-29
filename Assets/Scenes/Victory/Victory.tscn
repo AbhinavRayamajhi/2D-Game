@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://be1i3rlcnhqfa"]
+
+[ext_resource type="Texture2D" uid="uid://bwwmamg03hw2s" path="res://Assets/Scenes/Victory/victory.webp" id="1_g7hgx"]
+[ext_resource type="Script" uid="uid://ciel8gp8wvd4c" path="res://Assets/Scenes/Victory/victory.gd" id="1_ojdnh"]
+[ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="2_lpn4o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx3qe"]
+bg_color = Color(0.41966137, 0.6833252, 0.1869291, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gpsq"]
+
+[node name="Main" type="Node2D" unique_id=1942975870]
+script = ExtResource("1_ojdnh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=243592542]
+
+[node name="Victory" type="Sprite2D" parent="." unique_id=488248020]
+texture_filter = 1
+position = Vector2(-2, -53.000004)
+scale = Vector2(1.2654167, 1.2591667)
+texture = ExtResource("1_g7hgx")
+
+[node name="Button" type="Button" parent="." unique_id=1495133584]
+offset_left = -86.0
+offset_top = 202.0
+offset_right = 87.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0.31717506, 0.68450344, 0.19304466, 1)
+theme_override_fonts/font = ExtResource("2_lpn4o")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nx3qe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4gpsq")
+text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b0f6mysjj7ehl"]
+
+[ext_resource type="Script" uid="uid://bx78o5xq2pc5g" path="res://Assets/Legs/legs.gd" id="1_cloce"]
+[ext_resource type="Texture2D" uid="uid://b0rap6eh6lijp" path="res://Assets/Legs/legs.png" id="2_sb48w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1gp5"]
+size = Vector2(40, 49)
+
+[node name="Legs" type="Area2D" unique_id=585775686]
+collision_layer = 2
+script = ExtResource("1_cloce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816228785]
+position = Vector2(-2, 7.5)
+shape = SubResource("RectangleShape2D_t1gp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=851045819]
+texture = ExtResource("2_sb48w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

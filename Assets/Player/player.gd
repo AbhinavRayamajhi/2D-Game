@@ -10,16 +10,21 @@ const BOOST_COOLDOWN = 1.3
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var boost_timer: Timer = $BoostTimer
 @onready var boost_cooldown: Timer = $BoostCooldown
+@onready var end_timer: Timer = $HUD/EndTimer
+@onready var out_of_stamina: Label = $HUD/OutOfStamina
 
 var is_jumping = false
 var is_boosting = false
 var is_boost_cooldown = false
 var facing_direction = 1.0
+var level_ended = false
 
 func _ready() -> void:
-	
+	out_of_stamina.hide()
 	boost_timer.timeout.connect(stop_boost)
 	boost_cooldown.timeout.connect(boost_cooldown_reset)
+	end_timer.timeout.connect(end_level)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity. No gravity on boost
@@ -28,12 +33,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		is_jumping = false #if on floor not jumping
 	
+	# Required because sometimes stamina may go below 0 
+	if Global.stamina < 0:
+		Global.stamina = 0
+		
 	# No movement allowed if no stamina
-	# Need to add a game over thing
-	if Global.stamina <= 0:
+	if Global.stamina == 0:
 		animated_sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
+		# Prevent further input
+		if level_ended: 
+			return
+		# Print the msg "out of stamina" and end after timer
+		out_of_stamina.show()
+		end_timer.start()
+		level_ended = true
 		return
 		
 	# Get the input direction and handle the movement/deceleration.
@@ -74,6 +89,7 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
+
 func start_boost() -> void:
 	Global.stamina -= 10
 	is_boosting = true
@@ -87,3 +103,7 @@ func stop_boost() -> void:
 	
 func boost_cooldown_reset() -> void:
 	is_boost_cooldown = false
+	
+	
+func end_level() -> void:
+	get_tree().change_scene_to_file("res://Assets/Level Select/level_select.tscn")
