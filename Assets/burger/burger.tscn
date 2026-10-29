@@ -7,18 +7,22 @@
 atlas = ExtResource("2_30tfp")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_30tfp"]
+atlas = ExtResource("2_30tfp")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nf2bk"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": null
-}, {
 "duration": 7.0,
 "texture": SubResource("AtlasTexture_v5fyg")
 }, {
 "duration": 1.0,
 "texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30tfp")
 }, {
 "duration": 1.0,
 "texture": null
@@ -35,7 +39,9 @@ script = ExtResource("1_30tfp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1564734363]
 sprite_frames = SubResource("SpriteFrames_nf2bk")
-frame_progress = 0.32277286
+frame_progress = 0.859014
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943006069]
 shape = SubResource("CircleShape2D_h331j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
