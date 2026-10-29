@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var enemy = $"../Enemy"
 var FAN_SPEED = -600
 
 # Called when the node enters the scene tree for the first time.
@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player or body == enemy:
 		body.velocity.y = FAN_SPEED

@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1gp5"]
-size = Vector2(49, 111)
+size = Vector2(49, 178)
 
 [node name="Fan" type="Node2D" unique_id=1103289012]
 script = ExtResource("1_q2odg")
@@ -40,7 +40,7 @@ frame_progress = 0.89388525
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1214625243]
-position = Vector2(-0.5, -45.5)
+position = Vector2(-0.5, -79)
 shape = SubResource("RectangleShape2D_t1gp5")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

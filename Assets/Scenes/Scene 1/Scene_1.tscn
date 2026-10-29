@@ -103,6 +103,9 @@ distance = -401.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1gp5"]
 size = Vector2(218, 65)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_06db0"]
+distance = 360.0
+
 [node name="Scene1" type="Node2D" unique_id=394850089]
 script = ExtResource("1_dqf12")
 
@@ -159,7 +162,7 @@ tile_map_data = PackedByteArray("AAD7/wEABgABAAAAAAD8/wEABgABAAAAAAD9/wEABgABAAA
 tile_set = SubResource("TileSet_1l4rv")
 
 [node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("8_pokee")]
-position = Vector2(-736, -344)
+position = Vector2(-504, -344)
 
 [node name="Player" parent="." unique_id=482659332 instance=ExtResource("3_dqf12")]
 position = Vector2(-178, 51)
@@ -260,6 +263,13 @@ stream = ExtResource("8_brr1c")
 volume_db = -25.544
 autoplay = true
 
+[node name="TopBoundary" type="Area2D" parent="." unique_id=1351983573]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=641005486]
+position = Vector2(0, -48)
+shape = SubResource("WorldBoundaryShape2D_06db0")
+
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 2" to="." method="_on_checkpoint_2_body_entered"]
+[connection signal="body_entered" from="TopBoundary" to="." method="_on_top_boundary_body_entered"]
