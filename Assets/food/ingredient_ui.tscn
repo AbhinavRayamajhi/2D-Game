@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bi1tnrn46plb5"]
+
+[ext_resource type="Script" uid="uid://bg5defnkgnpdq" path="res://Assets/food/ingredient_ui.gd" id="1_vnlai"]
+[ext_resource type="Texture2D" uid="uid://b06mook465swo" path="res://Assets/food/images/inventory-background.png" id="2_qp055"]
+
+[node name="ingredient_ui" type="Control" unique_id=369010407]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vnlai")
+
+[node name="ColorRect" type="NinePatchRect" parent="." unique_id=648824891]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 63.0
+offset_bottom = 78.0
+texture = ExtResource("2_qp055")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
