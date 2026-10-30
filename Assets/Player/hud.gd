@@ -18,3 +18,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.pressed and not event.echo and event.keycode == KEY_I:
 			ingredients.visible = not ingredients.visible
+			
+func show_ingredients() -> void:
+	ingredients.show()
