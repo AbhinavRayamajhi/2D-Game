@@ -18,6 +18,7 @@ config/icon="uid://cab0x6i4n87cl"
 [autoload]
 
 Global="*uid://b5qnkwebhll6v"
+Audio="*uid://2qyb01ftxuek"
 
 [display]
 

@@ -12,6 +12,8 @@ extends Node2D
 @onready var cave_complete: Sprite2D = $CaveComplete
 @onready var factory_complete: Sprite2D = $FactoryComplete
 
+@export var level_select_music: AudioStream 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +25,7 @@ func _ready() -> void:
 	if Global.scene_2_cleared:
 		factory_complete.show()
 		forest.show()
-
+	Audio.play_track(level_select_music)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

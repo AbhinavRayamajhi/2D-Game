@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cre3d6012ihyw" path="res://Assets/Level Select/level_select.gd" id="1_nb0ai"]
 [ext_resource type="Texture2D" uid="uid://dgiisckd00w6d" path="res://Assets/Level Select/Images/map.webp" id="1_qlsm8"]
+[ext_resource type="AudioStream" uid="uid://cpnrttmbf3lnv" path="res://Assets/Music/the_mountain-retro-game-593063.mp3" id="2_16w2i"]
 [ext_resource type="Texture2D" uid="uid://n84cvuohw8qu" path="res://Assets/Level Select/Images/cave.webp" id="2_073de"]
 [ext_resource type="Texture2D" uid="uid://b7j5bdqtkw3o4" path="res://Assets/Level Select/Images/images.png" id="4_3cohm"]
 [ext_resource type="Texture2D" uid="uid://br2hkdqthuo2s" path="res://Assets/Level Select/Images/complete.png" id="5_q5rsi"]
@@ -10,6 +11,7 @@
 
 [node name="LevelSelect" type="Node2D" unique_id=1681085335]
 script = ExtResource("1_nb0ai")
+level_select_music = ExtResource("2_16w2i")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2066064752]
 texture_filter = 1

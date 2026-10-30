@@ -10,10 +10,13 @@ var enemy_pos_y = -330
 @onready var checkpoint_2: Area2D = $"Checkpoints/Checkpoint 2"
 @onready var enemy = $Enemy
 
+@export var level_1_music: AudioStream 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_player_pos()
 	update_enemy_pos()
+	Audio.play_track(level_1_music)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

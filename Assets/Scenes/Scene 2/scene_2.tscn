@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bdxhqua1nxdde" path="res://Assets/Scenes/Scene 2/scene_2.gd" id="1_0dxyp"]
 [ext_resource type="Texture2D" uid="uid://dmdr2pgsfkwjd" path="res://Assets/Scenes/Scene 2/Background/1.png" id="1_aws68"]
+[ext_resource type="AudioStream" uid="uid://bmed5rx7oj38t" path="res://Assets/Music/atlasaudio-arcade-game-617542.mp3" id="2_a1gbn"]
 [ext_resource type="Texture2D" uid="uid://cito5k04adpgu" path="res://Assets/Scenes/Scene 2/Background/2.png" id="2_ypuxc"]
 [ext_resource type="Texture2D" uid="uid://caanpfjcqxnop" path="res://Assets/Scenes/Scene 2/Background/3.png" id="3_pc5pt"]
 [ext_resource type="Texture2D" uid="uid://dho3nifld7ffk" path="res://Assets/Scenes/Scene 2/Background/4.png" id="4_0dxyp"]
 [ext_resource type="Texture2D" uid="uid://dbxgyyhjl5jqf" path="res://Assets/Scenes/Scene 2/Tiles/sprite_sheet.png" id="5_pc5pt"]
-[ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/player.tscn" id="6_0dxyp"]
+[ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="6_0dxyp"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="8_3gase"]
-[ext_resource type="AudioStream" uid="uid://bwqfm6b8we6rl" path="res://Assets/Music/cosmic-drift-moire-main-version-39705-02-08.mp3" id="8_3rqwp"]
 [ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="8_6gbfa"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="10_g105j"]
 
@@ -53,6 +53,7 @@ size = Vector2(152.5, 65)
 
 [node name="Scene2" type="Node2D" unique_id=1159939866]
 script = ExtResource("1_0dxyp")
+level_2_music = ExtResource("2_a1gbn")
 
 [node name="Parallax BG" type="Node2D" parent="." unique_id=791908356]
 position = Vector2(0, 100)
@@ -177,11 +178,6 @@ text = "Level 2 Cleared"
 
 [node name="End_Timer" type="Timer" parent="End_Label" unique_id=1755159701]
 one_shot = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1411280146]
-stream = ExtResource("8_3rqwp")
-volume_db = -25.544
-autoplay = true
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]

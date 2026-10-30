@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cyopsotmgyqir" path="res://Assets/Main Menu/start_menu.gd" id="1_8tr0v"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_jwbto"]
 [ext_resource type="Texture2D" uid="uid://wt1rjynswic" path="res://Assets/Main Menu/origbig.png" id="2_1n6dy"]
+[ext_resource type="AudioStream" uid="uid://cpnrttmbf3lnv" path="res://Assets/Music/the_mountain-retro-game-593063.mp3" id="2_fttt3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h331j"]
 texture = ExtResource("2_1n6dy")
@@ -72,6 +73,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.34
 script = ExtResource("1_8tr0v")
+start_music = ExtResource("2_fttt3")
 
 [node name="bg" type="Panel" parent="." unique_id=900733521]
 layout_mode = 1
@@ -154,4 +156,5 @@ horizontal_alignment = 1
 uppercase = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

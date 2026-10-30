@@ -109,6 +109,7 @@ distance = 360.0
 
 [node name="Scene1" type="Node2D" unique_id=394850089]
 script = ExtResource("1_dqf12")
+level_1_music = ExtResource("8_brr1c")
 
 [node name="Parallax BG" type="Node2D" parent="." unique_id=1055999008]
 position = Vector2(0, 100)
@@ -258,11 +259,6 @@ text = "Level 1 Cleared"
 
 [node name="End_Timer" type="Timer" parent="End_Label" unique_id=347332160]
 one_shot = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=304490775]
-stream = ExtResource("8_brr1c")
-volume_db = -25.544
-autoplay = true
 
 [node name="TopBoundary" type="Area2D" parent="." unique_id=1351983573]
 

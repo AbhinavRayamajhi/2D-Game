@@ -6,9 +6,11 @@ var player_pos_y = -32
 @onready var player: Player = $Player
 @onready var checkpoint_1: Area2D = $"Checkpoints/Checkpoint 1"
 
+@export var level_3_music: AudioStream 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Audio.play_track(level_3_music)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

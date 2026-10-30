@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://b50fnl4vumiqf"]
+
+[ext_resource type="Script" uid="uid://bkrp65m6ycjr3" path="res://Assets/Main Menu/tutorial.gd" id="1_2fkfq"]
+[ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_mcl0e"]
+[ext_resource type="FontFile" uid="uid://b2hf7og6v6kc5" path="res://Assets/Main Menu/Michroma-Regular.ttf" id="2_y280h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcl0e"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Tutorial" type="Control" unique_id=374083497]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fkfq")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1342775642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.70831245, 0.9313656, 0.6826304, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="BG" unique_id=770373512]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mcl0e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/PanelContainer" unique_id=1358238643]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="BG/PanelContainer/VBoxContainer" unique_id=1374501018]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mcl0e")
+theme_override_font_sizes/font_size = 36
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="Lore" type="Label" parent="BG/PanelContainer/VBoxContainer" unique_id=337940729]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y280h")
+text = "The Mafia stole your legs, get it back."
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="BG/PanelContainer/VBoxContainer" unique_id=239233506]
+layout_mode = 2
+
+[node name="Movement" type="HBoxContainer" parent="BG/PanelContainer/VBoxContainer" unique_id=41323436]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BG/PanelContainer/VBoxContainer/Movement" unique_id=1807654970]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "  Movement"
+
+[node name="Label2" type="Label" parent="BG/PanelContainer/VBoxContainer/Movement" unique_id=1615147222]
+layout_mode = 2
+text = "A/D or left/right arrow keys  "
+
+[node name="Jump" type="HBoxContainer" parent="BG/PanelContainer/VBoxContainer" unique_id=482063659]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BG/PanelContainer/VBoxContainer/Jump" unique_id=1827044097]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "  Jump"
+
+[node name="Label2" type="Label" parent="BG/PanelContainer/VBoxContainer/Jump" unique_id=2063321707]
+layout_mode = 2
+text = "Space  "
+
+[node name="Boost" type="HBoxContainer" parent="BG/PanelContainer/VBoxContainer" unique_id=961820464]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BG/PanelContainer/VBoxContainer/Boost" unique_id=449030079]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "  Boost"
+
+[node name="Label2" type="Label" parent="BG/PanelContainer/VBoxContainer/Boost" unique_id=643991257]
+layout_mode = 2
+text = "Left Shift  "
+
+[node name="HSeparator2" type="HSeparator" parent="BG/PanelContainer/VBoxContainer" unique_id=1445423153]
+layout_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="BG/PanelContainer/VBoxContainer" unique_id=99914173]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_y280h")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[ul]
+Movement, Jump and Boost consume stamina.
+Stamina DOES NOT REGENERATE.
+Collect coins and ingredients to buy and make food.
+Food gives you stamina.
+Avoid the mafia member chasing you, he will drain your stamina.
+If you run out of stamina, you fail the level and have to restart the level.
+If you run out of stamina, coins and ingredients its game over.
+[/ul]"
+fit_content = true
+
+[node name="Back" type="Button" parent="BG/PanelContainer/VBoxContainer" unique_id=192459641]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mcl0e")
+text = "BACK"
+
+[connection signal="pressed" from="BG/PanelContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

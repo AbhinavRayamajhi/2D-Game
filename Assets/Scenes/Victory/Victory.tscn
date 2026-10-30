@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwmamg03hw2s" path="res://Assets/Scenes/Victory/victory.webp" id="1_g7hgx"]
 [ext_resource type="Script" uid="uid://ciel8gp8wvd4c" path="res://Assets/Scenes/Victory/victory.gd" id="1_ojdnh"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="2_lpn4o"]
+[ext_resource type="AudioStream" uid="uid://dstxd1tg4qi4x" path="res://Assets/Music/victory fanfare 16bit.mp3" id="2_nx3qe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx3qe"]
 bg_color = Color(0.41966137, 0.6833252, 0.1869291, 1)
@@ -11,6 +12,7 @@ bg_color = Color(0.41966137, 0.6833252, 0.1869291, 1)
 
 [node name="Main" type="Node2D" unique_id=1942975870]
 script = ExtResource("1_ojdnh")
+victory_music = ExtResource("2_nx3qe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=243592542]
 
