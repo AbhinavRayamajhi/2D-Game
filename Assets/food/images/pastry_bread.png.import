@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ilb5b0pvnv63"
-path="res://.godot/imported/pastry_bread.png-06421f23827966493595d3f4ca7d74c3.ctex"
+path="res://.godot/imported/pastry_bread.png-142c0902ae9c59338248242cb93c48c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/pastry_bread.png"
-dest_files=["res://.godot/imported/pastry_bread.png-06421f23827966493595d3f4ca7d74c3.ctex"]
+source_file="res://Assets/food/images/pastry_bread.png"
+dest_files=["res://.godot/imported/pastry_bread.png-142c0902ae9c59338248242cb93c48c7.ctex"]
 
 [params]
 

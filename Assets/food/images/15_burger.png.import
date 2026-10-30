@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tv01620x21ml"
-path="res://.godot/imported/eggs_fried.png-3e267c90378dde9d8525c341fa4bb0e4.ctex"
+uid="uid://bsm1cg7odlmw6"
+path="res://.godot/imported/15_burger.png-4ebb923aa7a21373165b257f489c1c75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/eggs_fried.png"
-dest_files=["res://.godot/imported/eggs_fried.png-3e267c90378dde9d8525c341fa4bb0e4.ctex"]
+source_file="res://Assets/food/images/15_burger.png"
+dest_files=["res://.godot/imported/15_burger.png-4ebb923aa7a21373165b257f489c1c75.ctex"]
 
 [params]
 

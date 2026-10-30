@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dntii37vwdo8y"
-path="res://.godot/imported/fruit_greengrape.png-ecefbfd43e6620ff28ffd4712a5aca2f.ctex"
+uid="uid://tv01620x21ml"
+path="res://.godot/imported/eggs_fried.png-1c10ff558854ed2a6c3b500c99a2b514.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/fruit_greengrape.png"
-dest_files=["res://.godot/imported/fruit_greengrape.png-ecefbfd43e6620ff28ffd4712a5aca2f.ctex"]
+source_file="res://Assets/food/images/eggs_fried.png"
+dest_files=["res://.godot/imported/eggs_fried.png-1c10ff558854ed2a6c3b500c99a2b514.ctex"]
 
 [params]
 

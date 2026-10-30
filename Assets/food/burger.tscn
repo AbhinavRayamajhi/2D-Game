@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qw78juin4mth"]
 
 [ext_resource type="Script" uid="uid://clq3m1y3i40vq" path="res://Assets/food/tomato.gd" id="1_u3li0"]
-[ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/ingredients/vegetable_tomato.png" id="2_7dyow"]
+[ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="2_7dyow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ej2w"]
 atlas = ExtResource("2_7dyow")

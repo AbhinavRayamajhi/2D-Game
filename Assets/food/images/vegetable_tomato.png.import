@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k7ml722yes3q"
-path="res://.godot/imported/pastry_baguette.png-6cb31579389afa7453d6726a8a5c0e1a.ctex"
+uid="uid://dpl7k8bu4uqy3"
+path="res://.godot/imported/vegetable_tomato.png-abc8314c3bc523f356dc2c8b669466e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/pastry_baguette.png"
-dest_files=["res://.godot/imported/pastry_baguette.png-6cb31579389afa7453d6726a8a5c0e1a.ctex"]
+source_file="res://Assets/food/images/vegetable_tomato.png"
+dest_files=["res://.godot/imported/vegetable_tomato.png-abc8314c3bc523f356dc2c8b669466e1.ctex"]
 
 [params]
 

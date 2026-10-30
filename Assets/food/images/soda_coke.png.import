@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpl7k8bu4uqy3"
-path="res://.godot/imported/vegetable_tomato.png-c30a9f92f83536d208ad2c9c9ea5719b.ctex"
+uid="uid://b5mk7bxx5sibi"
+path="res://.godot/imported/soda_coke.png-fee623738dfd34a16b70f846688904b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/vegetable_tomato.png"
-dest_files=["res://.godot/imported/vegetable_tomato.png-c30a9f92f83536d208ad2c9c9ea5719b.ctex"]
+source_file="res://Assets/food/images/soda_coke.png"
+dest_files=["res://.godot/imported/soda_coke.png-fee623738dfd34a16b70f846688904b3.ctex"]
 
 [params]
 

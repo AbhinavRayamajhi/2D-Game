@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dubpq5v3q34at"
-path="res://.godot/imported/cheese_gouda.png-52597f3d89c9cd5a97d0c8bb460d7c20.ctex"
+uid="uid://k7ml722yes3q"
+path="res://.godot/imported/pastry_baguette.png-af9372f6597263db117154af3a166b98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/food/ingredients/cheese_gouda.png"
-dest_files=["res://.godot/imported/cheese_gouda.png-52597f3d89c9cd5a97d0c8bb460d7c20.ctex"]
+source_file="res://Assets/food/images/pastry_baguette.png"
+dest_files=["res://.godot/imported/pastry_baguette.png-af9372f6597263db117154af3a166b98.ctex"]
 
 [params]
 
