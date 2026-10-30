@@ -1,5 +1,5 @@
 extends Resource
-class_name Ingredient
+class_name ingredient_item
 
 
 @export var food_name: String = ""
