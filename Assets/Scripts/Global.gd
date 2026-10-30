@@ -15,3 +15,6 @@ func scene_cleared(scene: String) -> void:
 		scene_2_cleared = true
 	else:
 		print("Invalid Scene argument for scene_cleared")
+
+func end_game() -> void:
+	get_tree().change_scene_to_file("res://Assets/game_over.tscn")

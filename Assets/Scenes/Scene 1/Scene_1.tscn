@@ -242,7 +242,9 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/Checkpoint 2" unique_id=769423185]
 shape = SubResource("RectangleShape2D_t1gp5")
 
-[node name="Fan" parent="." unique_id=1103289012 instance=ExtResource("6_rq81t")]
+[node name="Fans" type="Node" parent="." unique_id=1777859654]
+
+[node name="Fan" parent="Fans" unique_id=1103289012 instance=ExtResource("6_rq81t")]
 position = Vector2(2729, 111)
 
 [node name="EndFlag" parent="." unique_id=939289238 instance=ExtResource("12_fr884")]

@@ -11,6 +11,7 @@ const JUMP_VELOCITY = -400.0
 const WORLD_MASK = 1
 const SCAN_STEP = 16
 const MAX_SCAN = 600
+const FEET_OFFSET = 30
 enum JumpType { NONE, NORMAL, DOUBLE, DASH }
 var direction_x = 0.0
 var chasing = true
@@ -19,6 +20,9 @@ var jumping = false
 var jump_type = JumpType.NONE
 var air_jump_used = false #if already double jumped
 var dash_timer = 0.0 #amount of time left in dash speed
+var fan_grace = 0.0 #>0 when enemy is in fan
+var fan_flight = false #true from when fan launches enemy till it lands
+var apex_checked = false
 
 
 func _physics_process(delta: float) -> void:
@@ -30,10 +34,19 @@ func _physics_process(delta: float) -> void:
 		jump_type = JumpType.NONE
 		air_jump_used = false
 		dash_timer = 0.0
+		fan_grace = 0.0
+		fan_flight = false
+		apex_checked = false
+	
+	if fan_grace > 0.0:
+		fan_grace -= delta
+		fan_flight = true
 
 	if chasing:
 		animated_sprite_2d.play("run")
-		direction_x = sign(target.global_position.x - global_position.x)
+		var dx = target.global_position.x - global_position.x
+		if abs(dx) > 8.0:
+			direction_x = sign(dx)
 		velocity.x = (direction_x * SPEED)
 		if direction_x != 0: #flip sprite + detectors
 			orientation.scale.x = direction_x
@@ -53,6 +66,10 @@ func _physics_process(delta: float) -> void:
 		if jump_type == JumpType.DOUBLE and not air_jump_used and not is_on_floor() and velocity.y > 0:
 			air_jump_used = true
 			velocity.y = JUMP_VELOCITY
+		if fan_flight and fan_grace <= 0.0 and not apex_checked and not is_on_floor() and velocity.y >= 0:
+			apex_checked = true
+			if not can_land(SPEED):
+				dash_timer = 5.0
 			
 		#if (not ground_detector.has_overlapping_bodies() or wall_detector.has_overlapping_bodies()) and not jumping:
 			#jumping = true
@@ -66,9 +83,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
-	print("entered area2d")
 	if body == target:
-		print("player entered enemy area")
+		print("entered enemy area")
 		chasing = false
 		attacking = true
 		attack()
@@ -76,9 +92,12 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 
 func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body == target:
+		print("left enemy area")
 		attacking = false
-		chasing = true
+		if not attacking:
+			chasing = true
 		$AttackTimer.stop()
+		await get_tree().create_timer(0.2).timeout
 
 
 func _on_attack_timer_timeout() -> void:
@@ -129,3 +148,21 @@ func jump(type: int) -> void:
 	if type == JumpType.DASH:
 		dash_timer = jump_air_time()
 	animated_sprite_2d.play("jump")
+	
+func can_land(speed: float) -> bool:
+	var space = get_world_2d().direct_space_state
+	var g = get_gravity().y
+	var position = global_position + Vector2(0, FEET_OFFSET)
+	var vel = Vector2(direction_x * speed, velocity.y)
+	var step = 1.0/30.0
+	
+	for i in range(90):
+		var next_position = position + vel * step
+		vel.y = g * step
+		var query = PhysicsRayQueryParameters2D.create(position, next_position, WORLD_MASK)
+		query.exclude = [get_rid()]
+		var hit = space.intersect_ray(query)
+		if not hit.is_empty():
+			return hit.normal.y < -0.7 #checks if what is found is a floor, not wall
+		position = next_position
+	return false
