@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="6_0dxyp"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="8_3gase"]
 [ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="8_6gbfa"]
+[ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="9_a1gbn"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="10_g105j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rqwp"]
@@ -50,6 +51,18 @@ distance = -401.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gase"]
 size = Vector2(152.5, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thj4b"]
+size = Vector2(49, 274)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1gbn"]
+size = Vector2(49, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqnch"]
+size = Vector2(49, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4u7j"]
+size = Vector2(49, 325)
 
 [node name="Scene2" type="Node2D" unique_id=1159939866]
 script = ExtResource("1_0dxyp")
@@ -100,6 +113,9 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAD//wAAAQAAAAEAAAD+/wAAAQAAAAE
 tile_set = SubResource("TileSet_t1gp5")
 
 [node name="Player" parent="." unique_id=482659332 instance=ExtResource("6_0dxyp")]
+
+[node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("9_a1gbn")]
+position = Vector2(-146, -418)
 
 [node name="Coins" type="Node" parent="." unique_id=1390362854]
 
@@ -155,14 +171,30 @@ shape = SubResource("RectangleShape2D_3gase")
 [node name="Fan" parent="Fans" unique_id=1103289012 instance=ExtResource("8_3gase")]
 position = Vector2(757, 85)
 
+[node name="CollisionShape2D" parent="Fans/Fan/Area2D" parent_id_path=PackedInt32Array(1103289012, 538651735) index="0" unique_id=1214625243]
+position = Vector2(-0.5, -137)
+shape = SubResource("RectangleShape2D_thj4b")
+
 [node name="Fan2" parent="Fans" unique_id=1205186876 instance=ExtResource("8_3gase")]
 position = Vector2(1110, 82)
+
+[node name="CollisionShape2D" parent="Fans/Fan2/Area2D" parent_id_path=PackedInt32Array(1205186876, 538651735) index="0" unique_id=1214625243]
+position = Vector2(-0.5, -135)
+shape = SubResource("RectangleShape2D_a1gbn")
 
 [node name="Fan3" parent="Fans" unique_id=1631588558 instance=ExtResource("8_3gase")]
 position = Vector2(1486, 83)
 
+[node name="CollisionShape2D" parent="Fans/Fan3/Area2D" parent_id_path=PackedInt32Array(1631588558, 538651735) index="0" unique_id=1214625243]
+position = Vector2(-0.5, -136)
+shape = SubResource("RectangleShape2D_oqnch")
+
 [node name="Fan4" parent="Fans" unique_id=1397417442 instance=ExtResource("8_3gase")]
 position = Vector2(2417, 104)
+
+[node name="CollisionShape2D" parent="Fans/Fan4/Area2D" parent_id_path=PackedInt32Array(1397417442, 538651735) index="0" unique_id=1214625243]
+position = Vector2(-0.5, -162.5)
+shape = SubResource("RectangleShape2D_f4u7j")
 
 [node name="EndFlag" parent="." unique_id=939289238 instance=ExtResource("10_g105j")]
 position = Vector2(3133, 51)
@@ -182,3 +214,8 @@ one_shot = true
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 2" to="." method="_on_checkpoint_2_body_entered"]
+
+[editable path="Fans/Fan"]
+[editable path="Fans/Fan2"]
+[editable path="Fans/Fan3"]
+[editable path="Fans/Fan4"]
