@@ -44,12 +44,10 @@ func _physics_process(delta: float) -> void:
 
 	if chasing:
 		animated_sprite_2d.play("run")
-		var dx = target.global_position.x - global_position.x
-		if abs(dx) > 8.0:
-			direction_x = sign(dx)
-		velocity.x = (direction_x * SPEED)
+		direction_x = sign(target.global_position.x - global_position.x)
 		if direction_x != 0: #flip sprite + detectors
 			orientation.scale.x = direction_x
+		velocity.x = (direction_x * SPEED)
 		if dash_timer > 0.0: #if time in dash jump still remains, reduce it and apply the speed
 			dash_timer -= delta
 			velocity.x = direction_x * DASH_SPEED
@@ -94,10 +92,8 @@ func _on_area_2d_body_exited(body: CharacterBody2D) -> void:
 	if body == target:
 		print("left enemy area")
 		attacking = false
-		if not attacking:
-			chasing = true
-		$AttackTimer.stop()
-		await get_tree().create_timer(0.2).timeout
+		chasing = true
+		#$AttackTimer.stop()
 
 
 func _on_attack_timer_timeout() -> void:
@@ -108,8 +104,8 @@ func attack():
 	if not attacking:
 		return
 	animated_sprite_2d.play("attack")
-	Global.stamina -= 20
-	$AttackTimer.start()
+	Global.stamina = 0
+	#$AttackTimer.start()
 
 func jump_air_time() -> float:
 	return 2.0 * (abs(JUMP_VELOCITY) / get_gravity().y)
