@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://c2d0j8qumytdc" path="res://Assets/Player/walk.png" id="2_a52ai"]
 [ext_resource type="Texture2D" uid="uid://bsifkxpl7hxlb" path="res://Assets/Player/jump.png" id="2_ftc6t"]
 [ext_resource type="Script" uid="uid://b6c68tm44k25p" path="res://Assets/Player/hud.gd" id="6_aqk3a"]
-[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/ingredient_item.gd" id="7_o1dpk"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="8_qofj0"]
 [ext_resource type="Texture2D" uid="uid://b5mk7bxx5sibi" path="res://Assets/food/images/soda_coke.png" id="8_x4ggo"]
 [ext_resource type="Texture2D" uid="uid://dntii37vwdo8y" path="res://Assets/food/images/fruit_greengrape.png" id="9_o1dpk"]
 [ext_resource type="Texture2D" uid="uid://tv01620x21ml" path="res://Assets/food/images/eggs_fried.png" id="10_vewtk"]
 [ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="11_a3eu5"]
 [ext_resource type="Texture2D" uid="uid://dgm8vyo436uca" path="res://Assets/Sprites/11_bun.png" id="12_dthkx"]
+[ext_resource type="PackedScene" uid="uid://bi1tnrn46plb5" path="res://ingredient_ui.tscn" id="14_vewtk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_motui"]
 atlas = ExtResource("2_33wup")
@@ -948,8 +948,8 @@ tint_under = Color(0.29411766, 0.29411766, 0.29411766, 0.80784315)
 tint_progress = Color(0.39607844, 1, 0.078431375, 1)
 
 [node name="ingredients" type="Panel" parent="HUD" unique_id=1775335519]
+visible = false
 layout_mode = 0
-script = ExtResource("7_o1dpk")
 
 [node name="contents" type="VBoxContainer" parent="HUD/ingredients" unique_id=384845601]
 layout_mode = 1
@@ -1117,6 +1117,9 @@ theme_override_font_sizes/font_size = 18
 text = ":"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ingredient_ui" parent="HUD" unique_id=369010407 instance=ExtResource("14_vewtk")]
+layout_mode = 0
 
 [node name="OutOfStamina" type="Label" parent="HUD" unique_id=25755429]
 visible = false

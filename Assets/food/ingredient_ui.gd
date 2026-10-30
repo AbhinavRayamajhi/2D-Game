@@ -1,11 +1,24 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var is_open = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("i"):
+		if is_open:
+			close()
+		else:
+			open()
+
+func _ready() -> void:
+	close()
+	
+func open():
+	visible = true
+	is_open = true
+	
+func close():
+	visible = false
+	is_open = false
+	
