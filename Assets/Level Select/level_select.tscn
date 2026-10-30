@@ -133,6 +133,7 @@ offset_left = 383.0
 offset_top = 172.0
 offset_right = 483.0
 offset_bottom = 289.0
+text = "Click to restore stamina"
 
 [connection signal="mouse_entered" from="Cave" to="." method="_on_cave_mouse_entered"]
 [connection signal="mouse_exited" from="Cave" to="." method="_on_cave_mouse_exited"]

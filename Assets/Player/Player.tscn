@@ -947,6 +947,7 @@ tint_under = Color(0.29411766, 0.29411766, 0.29411766, 0.80784315)
 tint_progress = Color(0.39607844, 1, 0.078431375, 1)
 
 [node name="ingredients" type="Panel" parent="HUD" unique_id=1775335519]
+visible = false
 layout_mode = 0
 
 [node name="contents" type="VBoxContainer" parent="HUD/ingredients" unique_id=384845601]
