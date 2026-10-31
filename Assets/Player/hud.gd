@@ -2,7 +2,6 @@ extends Control
 
 @onready var coins: Label = $Coins
 @onready var stamina: TextureProgressBar = $Stamina
-@onready var ingredients: Panel= $ingredients
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
