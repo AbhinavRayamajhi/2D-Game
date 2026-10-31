@@ -5,15 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://yhcnmfpouqfq" path="res://Assets/food/ingredient_slot_ui.tscn" id="3_qp055"]
 
 [node name="ingredient_ui" type="Control" unique_id=369010407]
-custom_minimum_size = Vector2(60, 74)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 60.0
+offset_bottom = 74.0
 script = ExtResource("1_vnlai")
 
 [node name="ColorRect" type="NinePatchRect" parent="." unique_id=648824891]
 layout_mode = 0
-offset_right = 60.0
-offset_bottom = 74.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 63.0
+offset_bottom = 78.0
 texture = ExtResource("2_qp055")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -21,18 +24,14 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="GridContainer" type="GridContainer" parent="ColorRect" unique_id=830864388]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+layout_mode = 0
 offset_left = 9.0
-offset_top = -31.0
-offset_right = 34.0
-offset_bottom = 9.0
-grow_vertical = 2
-scale = Vector2(1.1223658, 1.1223658)
-theme_override_constants/h_separation = 22
-theme_override_constants/v_separation = 20
+offset_top = 12.0
+offset_right = 49.0
+offset_bottom = 52.0
+scale = Vector2(1.1450865, 1.1450865)
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 17
 columns = 2
 
 [node name="ingredient_slot_ui" parent="ColorRect/GridContainer" unique_id=1791511407 instance=ExtResource("3_qp055")]

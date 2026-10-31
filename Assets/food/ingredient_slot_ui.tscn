@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://yhcnmfpouqfq"]
 
 [ext_resource type="Texture2D" uid="uid://bau2c4mj4fd4w" path="res://Assets/food/images/inventory-slot.png" id="1_2ix42"]
+[ext_resource type="Script" uid="uid://c24nw5crppiao" path="res://Assets/food/ingredient_slot_ui.gd" id="1_dv2dr"]
 
 [node name="ingredient_slot_ui" type="Panel" unique_id=1791511407]
 self_modulate = Color(1, 1, 1, 0)
 custom_maximum_size = Vector2(16, 16)
 offset_right = 16.0
 offset_bottom = 16.0
+script = ExtResource("1_dv2dr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=661573344]
 texture = ExtResource("1_2ix42")

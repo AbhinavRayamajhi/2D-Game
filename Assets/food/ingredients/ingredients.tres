@@ -1,0 +1,9 @@
+[gd_resource type="GDScript" format=3 uid="uid://bc0g87rctvdrj"]
+
+[resource]
+script/source = "extends Resource
+
+class_name Ing
+
+@export var ingredients: Array [ingredient_item]
+"
