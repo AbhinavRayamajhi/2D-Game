@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yhcnmfpouqfq"]
 
 [ext_resource type="Texture2D" uid="uid://bau2c4mj4fd4w" path="res://Assets/food/images/inventory-slot.png" id="1_2ix42"]
-[ext_resource type="Script" uid="uid://c24nw5crppiao" path="res://Assets/food/ingredient_slot_ui.gd" id="1_dv2dr"]
+[ext_resource type="Script" uid="uid://c24nw5crppiao" path="res://Assets/food/ingredients/ingredient_slot_ui.gd" id="1_dv2dr"]
 [ext_resource type="PackedScene" uid="uid://di5lg063mnw3c" path="res://Assets/food/food_display.tscn" id="3_gis5t"]
 
 [node name="ingredient_slot_ui" type="Panel" unique_id=1791511407]

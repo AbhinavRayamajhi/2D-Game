@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ckuetc2fxy5bk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cqtcj"]
+load_path = "res://.godot/imported/inventory-slot.png-f9a487b8a0cc5ecb40ae8b599126a780.ctex"
+
+[node name="recipe_slot" type="Panel" unique_id=2081212115]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(710, 368.5)
+offset_right = 190.0
+offset_bottom = 30.0
+
+[node name="ColorRect" type="NinePatchRect" parent="." unique_id=131980776]
+layout_mode = 1
+offset_right = 829.0
+offset_bottom = 404.0
+texture = SubResource("CompressedTexture2D_cqtcj")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
