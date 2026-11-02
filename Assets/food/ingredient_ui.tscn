@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5defnkgnpdq" path="res://Assets/food/ingredient_ui.gd" id="1_vnlai"]
 [ext_resource type="Texture2D" uid="uid://b06mook465swo" path="res://Assets/food/images/inventory-background.png" id="2_qp055"]
-[ext_resource type="PackedScene" uid="uid://yhcnmfpouqfq" path="res://Assets/food/ingredients/ingredient_slot_ui.tscn" id="3_qp055"]
+[ext_resource type="PackedScene" uid="uid://yhcnmfpouqfq" path="res://Assets/food/ingredients_resources/ingredient_slot_ui.tscn" id="3_qp055"]
 
 [node name="ingredient_ui" type="Control" unique_id=369010407]
 layout_mode = 3

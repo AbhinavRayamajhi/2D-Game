@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckuetc2fxy5bk"]
 
+[ext_resource type="Script" uid="uid://bfjodhxagat75" path="res://Assets/food/recipe_maker/recipe_slot.gd" id="1_4a42n"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_cicih"]
-[ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="2_4a42n"]
 [ext_resource type="FontFile" uid="uid://05urw78xhqho" path="res://Assets/Pixelated Elegance.ttf" id="3_totjp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cqtcj"]
@@ -12,6 +12,7 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(190, 30)
 offset_right = 190.0
 offset_bottom = 30.0
+script = ExtResource("1_4a42n")
 
 [node name="slot bg" type="NinePatchRect" parent="." unique_id=131980776]
 custom_maximum_size = Vector2(190, 30)
@@ -58,7 +59,6 @@ offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
-script = ExtResource("2_4a42n")
 
 [node name="ingredient" type="TextureRect" parent="ingredient" unique_id=871524811]
 custom_minimum_size = Vector2(30, 30)
@@ -107,3 +107,5 @@ theme_override_font_sizes/font_size = 8
 text = "1738"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

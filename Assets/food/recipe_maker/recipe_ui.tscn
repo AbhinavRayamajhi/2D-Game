@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8ifgricav4fl"]
 
-[ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_srp6v"]
+[ext_resource type="Script" uid="uid://cjmfuimp3ph2y" path="res://Assets/food/recipe_maker/recipe_ui.gd" id="1_5iooq"]
+[ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="2_me5i5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ytox"]
 content_margin_left = 0.0
@@ -14,13 +15,15 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[node name="recipe_ui" type="Control" unique_id=1402113746]
+[node name="recipe_ui" type="Control" unique_id=1402113746 node_paths=PackedStringArray("recipe_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5iooq")
+recipe_container = NodePath("Panel/recipes2")
 
 [node name="Panel" type="Panel" parent="." unique_id=751475585]
 custom_minimum_size = Vector2(200, 140)
@@ -38,7 +41,7 @@ offset_left = -68.5
 offset_right = 68.5
 offset_bottom = 40.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_srp6v")
+theme_override_fonts/font = ExtResource("2_me5i5")
 theme_override_font_sizes/font_size = 21
 text = "Recipes"
 horizontal_alignment = 1
