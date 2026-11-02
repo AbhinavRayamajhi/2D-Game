@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8ifgricav4fl"]
 
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="1_28hbj"]
+[ext_resource type="PackedScene" uid="uid://ckuetc2fxy5bk" path="res://Assets/food/recipe_slot.tscn" id="2_xq7p0"]
 
 [node name="recipe_ui" type="Control" unique_id=1402113746]
 layout_mode = 3
@@ -35,6 +36,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=886079589]
+custom_minimum_size = Vector2(710, 368.5)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,3 +49,16 @@ offset_right = 355.0
 offset_bottom = 222.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="recipes" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=1297596754]
+custom_minimum_size = Vector2(710, 368.5)
+layout_mode = 2
+
+[node name="recipe_slot" parent="Panel/ScrollContainer/recipes" unique_id=1842972981 instance=ExtResource("2_xq7p0")]
+layout_mode = 2
+
+[node name="recipe_slot2" parent="Panel/ScrollContainer/recipes" unique_id=2081212115 instance=ExtResource("2_xq7p0")]
+layout_mode = 2
+
+[node name="recipe_slot3" parent="Panel/ScrollContainer/recipes" unique_id=1927269558 instance=ExtResource("2_xq7p0")]
+layout_mode = 2

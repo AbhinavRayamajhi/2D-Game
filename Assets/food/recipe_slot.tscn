@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ckuetc2fxy5bk"]
+
+[ext_resource type="Texture2D" uid="uid://bau2c4mj4fd4w" path="res://Assets/food/images/inventory-slot.png" id="1_v4dhm"]
+[ext_resource type="PackedScene" uid="uid://di5lg063mnw3c" path="res://Assets/food/food_display.tscn" id="2_bs3bc"]
+
+[node name="recipe_slot" type="Panel" unique_id=2081212115]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(190, 30)
+offset_right = 190.0
+offset_bottom = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661573344]
+texture = ExtResource("1_v4dhm")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=182215537]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1269655767]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="food_display" parent="CenterContainer" unique_id=1788165784 instance=ExtResource("2_bs3bc")]
+visible = false
+position = Vector2(8, 8)
+scale = Vector2(0.4451337, 0.4451337)
