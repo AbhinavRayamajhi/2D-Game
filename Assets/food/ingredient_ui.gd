@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ing: ingredients = preload("res://Assets/food/ingredients/ingredients.tres")
+@onready var ing: Ing = load("res://Assets/food/ingredients/ingredients.tres")
 @onready var slots: Array = $ColorRect/GridContainer.get_children()
 
 
@@ -16,7 +16,7 @@ func update_slots():
 		slots[i].update(ing.ingredients[i])
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("i"):
 		if is_open:
 			close()

@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var ingredient_visual: Sprite2D = $ingredient_display
+@onready var ingredient_visual: Area2D = $CenterContainer/food_display
 
 func update(ingredients: ingredient_item):
 	if !ingredients:

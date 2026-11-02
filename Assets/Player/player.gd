@@ -12,7 +12,7 @@ const BOOST_COOLDOWN = 1.3
 @onready var boost_cooldown: Timer = $BoostCooldown
 @onready var end_timer: Timer = $HUD/EndTimer
 @onready var out_of_stamina: Label = $HUD/OutOfStamina
-@export var ingredients: ingredients
+@export var ing: ing
 
 var is_jumping = false
 var is_boosting = false
