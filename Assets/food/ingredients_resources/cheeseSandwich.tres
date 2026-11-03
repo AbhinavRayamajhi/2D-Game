@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://fx16cih6abnv"]
+
+[ext_resource type="Texture2D" uid="uid://ilb5b0pvnv63" path="res://Assets/food/images/pastry_bread.png" id="1_aiykh"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="1_o8ak5"]
+
+[resource]
+resource_name = "Cheese Sandwich"
+script = ExtResource("1_o8ak5")
+title = "Cheese Sandwich"
+icon = ExtResource("1_aiykh")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"

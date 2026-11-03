@@ -1,6 +1,6 @@
 extends Resource
-class_name ingredient_item
+class_name item
 
 
-@export var food_name: String = ""
-@export var food_texture: Texture2D 
+@export var title: String
+@export var icon: Texture2D 

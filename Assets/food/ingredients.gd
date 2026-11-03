@@ -1,4 +1,4 @@
 extends Resource
 class_name Ing
 
-@export var listIngredients: Array [ingredient_item] = []
+@export var listIngredients: Array [item] = []

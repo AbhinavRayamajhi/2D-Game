@@ -60,12 +60,12 @@ grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
 
-[node name="ingredient" type="TextureRect" parent="ingredient" unique_id=871524811]
+[node name="recipe" type="TextureRect" parent="ingredient" unique_id=871524811]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 expand_mode = 1
 
-[node name="amount" type="Label" parent="ingredient/ingredient" unique_id=1281656531]
+[node name="amount" type="Label" parent="ingredient/recipe" unique_id=1281656531]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -84,12 +84,12 @@ text = "1738"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="ingredient2" type="TextureRect" parent="ingredient" unique_id=1923353881]
+[node name="recipe2" type="TextureRect" parent="ingredient" unique_id=1923353881]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 expand_mode = 1
 
-[node name="amount" type="Label" parent="ingredient/ingredient2" unique_id=699285146]
+[node name="amount" type="Label" parent="ingredient/recipe2" unique_id=699285146]
 visible = false
 layout_mode = 1
 anchors_preset = 3

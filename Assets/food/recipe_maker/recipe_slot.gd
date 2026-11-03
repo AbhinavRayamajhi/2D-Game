@@ -1,11 +1,11 @@
 extends Panel
 
-signal selected(recipe, node)
+signal selected (recipe, node)
 
 var recipe : Recipe:
 	set(value):
 		recipe = value
-		%Label.text = value.name
+		%Label.text = value.title
 		%Meal.texture = value.icon
 		for i in range(value.ingredients.size()):
 			var key = value.ingredients.keys()[i]

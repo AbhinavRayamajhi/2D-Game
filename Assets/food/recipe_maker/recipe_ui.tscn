@@ -3,15 +3,39 @@
 [ext_resource type="Script" uid="uid://cjmfuimp3ph2y" path="res://Assets/food/recipe_maker/recipe_ui.gd" id="1_5iooq"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="2_me5i5"]
 [ext_resource type="Script" uid="uid://dhps2acyibi67" path="res://Assets/food/recipe_maker/bread_recipe.gd" id="2_tr0o6"]
-[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_tr0o6"]
+[ext_resource type="Texture2D" uid="uid://ilb5b0pvnv63" path="res://Assets/food/images/pastry_bread.png" id="3_ay78g"]
+[ext_resource type="Resource" uid="uid://fx16cih6abnv" path="res://Assets/food/ingredients_resources/cheeseSandwich.tres" id="3_tr0o6"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="4_7cloe"]
+[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="5_lkvnj"]
+[ext_resource type="PackedScene" uid="uid://ckuetc2fxy5bk" path="res://Assets/food/recipe_maker/recipe_slot.tscn" id="5_tr0o6"]
+[ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="6_6wtt4"]
+[ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tll50"]
-load_path = "res://.godot/imported/pastry_bread.png-142c0902ae9c59338248242cb93c48c7.ctex"
+[sub_resource type="Resource" id="Resource_uoypb"]
+resource_name = "Bread"
+script = ExtResource("4_7cloe")
+title = "Bread"
+icon = ExtResource("5_lkvnj")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
-[sub_resource type="Resource" id="Resource_tr0o6"]
-script = ExtResource("2_tr0o6")
+[sub_resource type="Resource" id="Resource_x0sk1"]
+resource_name = "Cheese"
+script = ExtResource("4_7cloe")
+title = "Cheese"
+icon = ExtResource("6_6wtt4")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
+
+[sub_resource type="Resource" id="Resource_m2v2m"]
+resource_name = "Cheese Sandwich"
+script = ExtResource("7_sukel")
 name = "Cheese Sandwich"
-icon = SubResource("CompressedTexture2D_tll50")
+icon = ExtResource("3_ay78g")
+ingredients = Dictionary[ExtResource("4_7cloe"), int]({
+SubResource("Resource_uoypb"): 2,
+SubResource("Resource_x0sk1"): 1
+})
+product = ExtResource("3_tr0o6")
+cook_time = 2.0
 metadata/_custom_type_script = "uid://dhps2acyibi67"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ytox"]
@@ -34,7 +58,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5iooq")
-recipes = Array[ExtResource("2_tr0o6")]([SubResource("Resource_tr0o6")])
+recipes = Array[ExtResource("2_tr0o6")]([SubResource("Resource_m2v2m"), null, null, null])
 recipe_container = NodePath("Panel/recipes2")
 
 [node name="Panel" type="Panel" parent="." unique_id=751475585]
@@ -73,3 +97,9 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.92676526, 0.830565)
 alignment = 1
+
+[node name="recipe_slot" parent="Panel/recipes2" unique_id=2081212115 instance=ExtResource("5_tr0o6")]
+layout_mode = 2
+
+[node name="recipe_slot2" parent="Panel/recipes2" unique_id=2044740251 instance=ExtResource("5_tr0o6")]
+layout_mode = 2
