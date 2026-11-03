@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ingredient_item" format=3 uid="uid://b0t3mojrropqj"]
+[gd_resource type="Resource" script_class="item" format=3 uid="uid://b0t3mojrropqj"]
 
-[ext_resource type="Texture2D" uid="uid://b5mk7bxx5sibi" path="res://Assets/food/images/soda_coke.png" id="1_defiv"]
+[ext_resource type="Texture2D" uid="uid://crwhilfns0ccn" path="res://Assets/Sprites/13_bacon.png" id="1_1bnso"]
 [ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="2_1bnso"]
 
 [resource]
 script = ExtResource("2_1bnso")
 title = "Bacon"
-icon = ExtResource("1_defiv")
+icon = ExtResource("1_1bnso")
 metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
