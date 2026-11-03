@@ -43,10 +43,13 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_jn3fy")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_jn3fy")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": 1,
 "name": &"cheese",
@@ -71,7 +74,7 @@ position = Vector2(-1.1920929e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"cheese"
 autoplay = "cheese"
-frame_progress = 0.7877507
+frame_progress = 0.73715603
 speed_scale = 0.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
