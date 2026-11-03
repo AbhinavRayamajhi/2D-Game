@@ -39,7 +39,10 @@ func free_slots():
 
 func selection(item : Recipe, node : Panel):
 	selected_recipe = item
-	selected_rect = Rect2(node.global_position, node.size)
+	selected_rect = Rect2(
+		node.global_position - global_position,
+		node.size
+	)
 	queue_redraw()
 	print(item.name)
 

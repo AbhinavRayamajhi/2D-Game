@@ -30,11 +30,15 @@ var time : float = 0:
 
 
 func _physics_process(delta):
+	if recipe == null:
+		return
+	
 	if time >= 0 and get_index() == 0:
 		time += delta
-	if time > cook_time:
-		completed.emit(recipe, self)
- 
+		
+	if time >= cook_time:
+			completed.emit(recipe, self)
+			set_physics_process(false)
  
 func _on_cancel_pressed():
 	for key in recipe.ingredients:
