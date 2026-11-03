@@ -12,8 +12,8 @@ func _ready() -> void:
 	close()
 	
 func update_slots():
-	for i in range(min(ing.ingredients.size(), slots.size())):
-		slots[i].update(ing.ingredients[i])
+	for i in range(min(ing.listIngredients.size(), slots.size())):
+		slots[i].update(ing.listIngredients[i])
 	
 	
 func _process(_delta: float) -> void:

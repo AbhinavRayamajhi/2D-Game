@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Meat" format=3 uid="uid://b0t3mojrropqj"]
+
+[ext_resource type="Texture2D" uid="uid://b5mk7bxx5sibi" path="res://Assets/food/images/soda_coke.png" id="1_defiv"]
+[ext_resource type="Script" uid="uid://dnkm7p2y6my3c" path="res://Assets/food/ingredients_resources/meat.gd" id="2_defiv"]
+
+[resource]
+script = ExtResource("2_defiv")
+food_name = "Meat"
+food_texture = ExtResource("1_defiv")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"

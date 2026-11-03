@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Cheese" format=3 uid="uid://cu66xqlvqmiw2"]
+
+[ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="1_jyjkf"]
+[ext_resource type="Script" uid="uid://ce7u13px15bmx" path="res://Assets/food/ingredients_resources/cheese.gd" id="2_g2gbw"]
+
+[resource]
+script = ExtResource("2_g2gbw")
+food_name = "Cheese"
+food_texture = ExtResource("1_jyjkf")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
