@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="2_1g772"]
 [ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="2_v5jdx"]
 [ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_vdyx5"]
-[ext_resource type="PackedScene" uid="uid://qw78juin4mth" path="res://Assets/food/burger.tscn" id="3_1g772"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
 atlas = ExtResource("2_1g772")
@@ -70,7 +69,5 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
 shape = SubResource("CircleShape2D_t1gp5")
-
-[node name="tomato" parent="Area2D" unique_id=1788165784 instance=ExtResource("3_1g772")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

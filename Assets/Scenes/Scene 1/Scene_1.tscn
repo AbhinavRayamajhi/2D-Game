@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bwqfm6b8we6rl" path="res://Assets/Music/cosmic-drift-moire-main-version-39705-02-08.mp3" id="8_brr1c"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="8_pokee"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="12_fr884"]
-[ext_resource type="PackedScene" uid="uid://di5lg063mnw3c" path="res://Assets/food/food_display.tscn" id="15_yasws"]
+[ext_resource type="PackedScene" uid="uid://ogbpxxc0lljw" path="res://Assets/food/recipe_maker/cheese.tscn" id="15_yasws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq757"]
 texture = ExtResource("2_k1smo")
@@ -270,9 +270,11 @@ shape = SubResource("WorldBoundaryShape2D_06db0")
 
 [node name="Food" type="Node" parent="." unique_id=947094039]
 
-[node name="tomato" parent="Food" unique_id=1788165784 instance=ExtResource("15_yasws")]
-visible = false
-position = Vector2(0, 1)
+[node name="Tomato" parent="Food" unique_id=1500997972 instance=ExtResource("15_yasws")]
+position = Vector2(157, 60)
+
+[node name="Tomato2" parent="Food" unique_id=2118645468 instance=ExtResource("15_yasws")]
+position = Vector2(962, -49)
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]

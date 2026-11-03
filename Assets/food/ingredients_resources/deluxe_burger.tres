@@ -37,7 +37,6 @@ icon = ExtResource("1_uehku")
 metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
 [resource]
-resource_name = "Deluxe Burger"
 script = ExtResource("3_13aws")
 name = "Deluxe Burger"
 icon = ExtResource("1_uehku")
