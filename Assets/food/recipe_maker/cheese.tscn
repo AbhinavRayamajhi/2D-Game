@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://ogbpxxc0lljw"]
 
-[ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_v5jdx"]
-[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="2_1g772"]
-[ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="2_v5jdx"]
-[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_vdyx5"]
+[ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_nman5"]
+[ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="2_jn3fy"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_caqdu"]
+[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="3_n0e8b"]
+
+[sub_resource type="Resource" id="Resource_1j4w0"]
+resource_name = "Cheese"
+script = ExtResource("3_caqdu")
+title = "Cheese"
+icon = ExtResource("2_jn3fy")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
-atlas = ExtResource("2_1g772")
+atlas = ExtResource("3_n0e8b")
 region = Rect2(0, 0, 28, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vdyx5"]
-atlas = ExtResource("2_v5jdx")
-region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t1gp5"]
 animations = [{
@@ -34,35 +37,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vdyx5")
+"texture": ExtResource("2_jn3fy")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vdyx5")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("2_jn3fy")
 }],
 "loop": 1,
-"name": &"tomato",
+"name": &"cheese",
 "speed": 6.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
 radius = 7.071068
 
-[node name="Tomato" type="Node2D" unique_id=1571938756]
-script = ExtResource("1_v5jdx")
-ingredient = ExtResource("2_vdyx5")
+[node name="Cheese" type="Node2D" unique_id=1571938756]
+script = ExtResource("1_nman5")
+ingredient = SubResource("Resource_1j4w0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
 position = Vector2(-1.1920929e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
-animation = &"tomato"
-autoplay = "tomato"
+animation = &"cheese"
+autoplay = "cheese"
+frame_progress = 0.7877507
+speed_scale = 0.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
 collision_mask = 6

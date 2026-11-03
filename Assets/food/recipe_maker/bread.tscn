@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://dhi0vtcgvb4u3"]
 
 [ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_jnps0"]
-[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_lcka0"]
 [ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="3_ieon5"]
+[ext_resource type="Texture2D" uid="uid://crwhilfns0ccn" path="res://Assets/Sprites/13_bacon.png" id="3_lcka0"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_nrh33"]
 [ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="4_nrh33"]
+
+[sub_resource type="Resource" id="Resource_lcka0"]
+resource_name = "Bread"
+script = ExtResource("3_nrh33")
+title = "Bread"
+icon = ExtResource("3_ieon5")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvs3p"]
+atlas = ExtResource("3_lcka0")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
 atlas = ExtResource("3_ieon5")
@@ -17,16 +29,33 @@ region = Rect2(0, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dvs3p")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvs3p")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"bacon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1nebj")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1nebj")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_1nebj")
 }],
 "loop": 1,
 "name": &"bread",
@@ -35,6 +64,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vdyx5")
+}, {
+"duration": 1.0,
+"texture": null
 }, {
 "duration": 1.0,
 "texture": null
@@ -53,16 +85,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
 radius = 7.071068
 
-[node name="Tomato" type="Node2D" unique_id=1571938756]
+[node name="bread" type="Node2D" unique_id=1571938756]
 script = ExtResource("1_jnps0")
-ingredient = ExtResource("2_lcka0")
+ingredient = SubResource("Resource_lcka0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
 position = Vector2(-1.1920929e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
-animation = &"tomato"
+animation = &"bread"
 autoplay = "tomato"
+frame_progress = 0.45287833
+speed_scale = 0.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
 collision_mask = 6
