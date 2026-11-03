@@ -41,16 +41,19 @@ func use_ingredients(ingredients : Dictionary):
 	for key in ingredients:
 		remove_item(key, ingredients[key])
 		
+
 func eat_food():
 	for item in inventory:
+		if item == null or inventory[item] <= 0:
+			continue
+
 		if item is Recipe:
 			continue
 
-		if item != null and inventory[item] > 0:
-			if item.title == "Cheese Sandwich" or item.title == "Deluxe Burger" or item.title == "Breakfast Sandwich":
-				remove_item(item, 1)
-				stamina = min(stamina + 25, 100)
-				print("Food eaten! Stamina: ", stamina)
-				return
+		if item.title == "Cheese Sandwich" or item.title == "Deluxe Burger" or item.title == "Breakfast Sandwich":
+			remove_item(item, 1)
+			stamina = min(stamina + 250, 1000)
+			print("Food eaten! Stamina: ", stamina)
+			return
 
 	print("No cooked food!")

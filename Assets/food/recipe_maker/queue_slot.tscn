@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bw7sn1tiigw6x" path="res://Assets/food/recipe_maker/queue_slot.gd" id="1_nn3ua"]
 
 [node name="queue_slot" type="Panel" unique_id=1743634785]
-custom_minimum_size = Vector2(250, 60)
+custom_minimum_size = Vector2(140, 140)
 offset_right = 250.0
 offset_bottom = 60.0
 script = ExtResource("1_nn3ua")
@@ -23,3 +23,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=802731469]
+
+[node name="Cancel" type="Button" parent="." unique_id=263213902]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CANCEL"
+
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

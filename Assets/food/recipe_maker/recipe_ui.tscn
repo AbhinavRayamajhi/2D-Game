@@ -11,7 +11,8 @@
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
 [ext_resource type="Resource" uid="uid://b64nh4m67iv5i" path="res://Assets/food/ingredients_resources/deluxe_burger.tres" id="8_7cloe"]
 [ext_resource type="Resource" uid="uid://crpt4w7l4qjam" path="res://Assets/food/ingredients_resources/brekkieSandwich.tres" id="9_lkvnj"]
-[ext_resource type="Texture2D" uid="uid://cflmroxfj23br" path="res://Assets/Level Select/Images/Back_button.png" id="12_6wtt4"]
+[ext_resource type="PackedScene" uid="uid://dwomvkdxqit5q" path="res://Assets/food/recipe_maker/queue_slot.tscn" id="12_6wtt4"]
+[ext_resource type="Texture2D" uid="uid://cflmroxfj23br" path="res://Assets/Level Select/Images/Back_button.png" id="13_sukel"]
 
 [sub_resource type="Resource" id="Resource_uoypb"]
 resource_name = "Bread"
@@ -50,6 +51,9 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2v2m"]
+bg_color = Color(0.30943933, 0.23209421, 0.15594886, 0.70900005)
 
 [node name="recipe_ui" type="Control" unique_id=1402113746 node_paths=PackedStringArray("recipe_container")]
 z_index = 1
@@ -135,25 +139,71 @@ theme_override_fonts/font = ExtResource("2_me5i5")
 theme_override_font_sizes/font_size = 39
 text = "Create"
 
-[node name="Queue" type="VBoxContainer" parent="." unique_id=1265035962]
-unique_name_in_owner = true
+[node name="Panel2" type="Panel" parent="." unique_id=1792498756]
 layout_mode = 0
-offset_left = 312.0
-offset_top = -185.0
-offset_right = 522.0
-offset_bottom = 288.0
+offset_left = 309.0
+offset_top = -294.0
+offset_right = 519.0
+offset_bottom = 147.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2v2m")
+
+[node name="queue" type="Label" parent="Panel2" unique_id=406010640]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.432
+offset_top = 22.594055
+offset_right = 5.0
+offset_bottom = -38.917953
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_me5i5")
+theme_override_font_sizes/font_size = 40
+text = "Queue
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2" unique_id=1054143193]
+custom_minimum_size = Vector2(210, 250)
+custom_maximum_size = Vector2(-1, 345)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 99.0
+offset_right = 249.0
+offset_bottom = 444.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="Queue" type="VBoxContainer" parent="Panel2/ScrollContainer" unique_id=1265035962]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+
+[node name="queue_slot" parent="Panel2/ScrollContainer/Queue" unique_id=1743634785 instance=ExtResource("12_6wtt4")]
+layout_mode = 2
+
+[node name="queue_slot2" parent="Panel2/ScrollContainer/Queue" unique_id=781352654 instance=ExtResource("12_6wtt4")]
+layout_mode = 2
+
+[node name="queue_slot3" parent="Panel2/ScrollContainer/Queue" unique_id=1824562568 instance=ExtResource("12_6wtt4")]
+layout_mode = 2
+
+[node name="queue_slot4" parent="Panel2/ScrollContainer/Queue" unique_id=546254746 instance=ExtResource("12_6wtt4")]
+layout_mode = 2
 
 [node name="Back" type="TextureButton" parent="." unique_id=972090426]
 layout_mode = 0
-offset_left = 445.0
-offset_top = -300.0
-offset_right = 574.0
-offset_bottom = -171.0
+offset_left = -568.0
+offset_top = -312.0
+offset_right = -364.0
+offset_bottom = -227.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Back" unique_id=1121312625]
-position = Vector2(-18.319305, 35.63636)
-scale = Vector2(0.24671322, 0.28409088)
-texture = ExtResource("12_6wtt4")
+position = Vector2(104.00001, 48)
+scale = Vector2(0.2522628, 0.28409088)
+texture = ExtResource("13_sukel")
 
 [connection signal="pressed" from="Panel/Create" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

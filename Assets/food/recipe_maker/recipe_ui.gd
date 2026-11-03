@@ -12,8 +12,7 @@ extends Control
 			load_recipes()
 
 @export var recipe_container : VBoxContainer 
-@onready var queue : VBoxContainer = $Queue
-
+@onready var queue : VBoxContainer = $Panel2/ScrollContainer/Queue
 var selected_recipe: Recipe
 var selected_rect: Rect2
 
@@ -61,28 +60,9 @@ func queue_item(item : Recipe):
 	queue_slot.recipe = item
 
 
-func _on_create_pressed() -> void:
-	print("BUTTON PRESSED")
-
-	if not selected_recipe:
-		print("NO RECIPE SELECTED")
-		return
-
-	if not Global.check_ingredients(selected_recipe.ingredients):
-		print("NOT ENOUGH ITEMS")
-		return
-
-	print("STARTING COOKING")
-	Global.use_ingredients(selected_recipe.ingredients)
-	queue_item(selected_recipe)
-	print("QUEUE ADDED")
-
-
-
-func finished_cooking(item: Recipe, node : Panel):
+func finished_cooking(item : Recipe, node : Panel):
 	if item == null:
 		return
-	
 
 	Global.add_item(item.product, item.product_amount)
 	node.queue_free()
