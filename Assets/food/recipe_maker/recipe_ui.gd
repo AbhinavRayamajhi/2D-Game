@@ -1,6 +1,7 @@
 extends Control
 
 @onready var recipe_slot_node: PackedScene = preload("res://Assets/food/recipe_maker/recipe_slot.tscn")
+@onready var queue_slot_node : PackedScene = preload("res://Assets/food/recipe_maker/queue_slot.tscn")
 
 @export var recipes : Array[Recipe]:
 	set(value):
@@ -11,6 +12,8 @@ extends Control
 			load_recipes()
 
 @export var recipe_container : VBoxContainer 
+@export var queue : VBoxContainer 
+
 
 var selected_recipe: Recipe
 var selected_rect: Rect2
@@ -40,13 +43,34 @@ func selection(item : Recipe, node : Panel):
 	queue_redraw()
 	print(item.name)
 
+func queue_item(item : Recipe):
+	if item == null:
+		return
+		var queue_slot = queue_slot_node.instantiate()
+		queue.add_child(queue_slot)
+		queue_slot.recipe = item
+		queue_slot.completed.connect(finished_cooking)
 
 func _on_create_pressed() -> void:
-	pass # Replace with function body.
-	
+	if not selected_recipe:
+		return
+
+	if not Global.check_ingredients(selected_recipe.ingredients):
+		print("Not Enough Items")
+		return
+
+	Global.use_ingredients(selected_recipe.ingredients)
+	queue_item(selected_recipe)
+
+
+
 func finished_cooking(item: Recipe, node : Panel):
 	if item == null:
 		return
-		
+	
+
+	Global.add_item(item.product, item.product_amount)
+	node.queue_free()
+	print(item.name + " added.")
 
 	

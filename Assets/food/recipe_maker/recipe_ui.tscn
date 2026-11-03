@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
 [ext_resource type="Resource" uid="uid://b64nh4m67iv5i" path="res://Assets/food/ingredients_resources/deluxe_burger.tres" id="8_7cloe"]
 [ext_resource type="Resource" uid="uid://crpt4w7l4qjam" path="res://Assets/food/ingredients_resources/brekkieSandwich.tres" id="9_lkvnj"]
+[ext_resource type="PackedScene" uid="uid://dwomvkdxqit5q" path="res://Assets/food/recipe_maker/queue_slot.tscn" id="12_6wtt4"]
 
 [sub_resource type="Resource" id="Resource_uoypb"]
 resource_name = "Bread"
@@ -74,13 +75,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -582.0
-offset_top = -320.0
-offset_right = 320.0
-offset_bottom = 258.0
+offset_left = -518.0
+offset_top = -298.0
+offset_right = 275.0
+offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ytox")
+
+[node name="recipes" type="Label" parent="Panel" unique_id=977571419]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 40.0
+offset_right = 81.5
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_me5i5")
+theme_override_font_sizes/font_size = 60
+text = "Recipes"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="recipes2" type="VBoxContainer" parent="Panel" unique_id=1754453814]
 layout_mode = 1
@@ -109,29 +126,24 @@ layout_mode = 2
 custom_minimum_size = Vector2(508, 86)
 layout_mode = 2
 
-[node name="recipes" type="Label" parent="Panel" unique_id=977571419]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -101.0
-offset_top = 28.0
-offset_right = 100.0
-offset_bottom = 122.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_me5i5")
-theme_override_font_sizes/font_size = 60
-text = "Recipes"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Create" type="Button" parent="." unique_id=1733839789]
 layout_mode = 0
-offset_left = 175.0
-offset_top = 186.0
-offset_right = 244.0
-offset_bottom = 220.0
+offset_left = 334.0
+offset_top = -302.0
+offset_right = 490.0
+offset_bottom = -213.0
 theme_override_fonts/font = ExtResource("2_me5i5")
+theme_override_font_sizes/font_size = 39
 text = "Create"
+
+[node name="Queue" type="VBoxContainer" parent="." unique_id=1265035962]
+layout_mode = 0
+offset_left = 344.0
+offset_top = -181.0
+offset_right = 554.0
+offset_bottom = 292.0
+
+[node name="Queue_slot" parent="Queue" unique_id=1591241556 instance=ExtResource("12_6wtt4")]
+layout_mode = 2
 
 [connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
