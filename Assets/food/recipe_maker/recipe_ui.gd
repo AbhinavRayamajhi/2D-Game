@@ -12,8 +12,7 @@ extends Control
 			load_recipes()
 
 @export var recipe_container : VBoxContainer 
-@export var queue : VBoxContainer 
-
+@onready var queue : VBoxContainer = $Queue
 
 var selected_recipe: Recipe
 var selected_rect: Rect2
@@ -27,7 +26,12 @@ func _draw():
 
 
 func load_recipes():
-	for recipe in recipes:
+	for recipe in recipes:	
+		for ingredient in recipe.ingredients:
+			Global.add_item(ingredient, 10)
+		
+		
+		
 		var recipe_slot = recipe_slot_node.instantiate()
 		recipe_container.add_child(recipe_slot)
 		recipe_slot.recipe = recipe
@@ -46,24 +50,32 @@ func selection(item : Recipe, node : Panel):
 	queue_redraw()
 	print(item.name)
 
+
 func queue_item(item : Recipe):
 	if item == null:
 		return
-		var queue_slot = queue_slot_node.instantiate()
-		queue.add_child(queue_slot)
-		queue_slot.recipe = item
-		queue_slot.completed.connect(finished_cooking)
+
+	var queue_slot = queue_slot_node.instantiate()
+	queue.add_child(queue_slot)
+	queue_slot.completed.connect(finished_cooking)
+	queue_slot.recipe = item
+
 
 func _on_create_pressed() -> void:
+	print("BUTTON PRESSED")
+
 	if not selected_recipe:
+		print("NO RECIPE SELECTED")
 		return
 
 	if not Global.check_ingredients(selected_recipe.ingredients):
-		print("Not Enough Items")
+		print("NOT ENOUGH ITEMS")
 		return
 
+	print("STARTING COOKING")
 	Global.use_ingredients(selected_recipe.ingredients)
 	queue_item(selected_recipe)
+	print("QUEUE ADDED")
 
 
 

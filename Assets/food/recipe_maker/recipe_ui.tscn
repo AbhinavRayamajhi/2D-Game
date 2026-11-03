@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
 [ext_resource type="Resource" uid="uid://b64nh4m67iv5i" path="res://Assets/food/ingredients_resources/deluxe_burger.tres" id="8_7cloe"]
 [ext_resource type="Resource" uid="uid://crpt4w7l4qjam" path="res://Assets/food/ingredients_resources/brekkieSandwich.tres" id="9_lkvnj"]
-[ext_resource type="PackedScene" uid="uid://dwomvkdxqit5q" path="res://Assets/food/recipe_maker/queue_slot.tscn" id="12_6wtt4"]
 
 [sub_resource type="Resource" id="Resource_uoypb"]
 resource_name = "Bread"
@@ -37,7 +36,6 @@ SubResource("Resource_uoypb"): 2,
 SubResource("Resource_x0sk1"): 1
 })
 product = ExtResource("3_tr0o6")
-cook_time = 2.0
 metadata/_custom_type_script = "uid://dhps2acyibi67"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ytox"]
@@ -126,24 +124,22 @@ layout_mode = 2
 custom_minimum_size = Vector2(508, 86)
 layout_mode = 2
 
-[node name="Create" type="Button" parent="." unique_id=1733839789]
+[node name="Create" type="Button" parent="Panel" unique_id=1733839789]
 layout_mode = 0
-offset_left = 334.0
-offset_top = -302.0
-offset_right = 490.0
-offset_bottom = -213.0
+offset_left = 852.0
+offset_top = -4.0
+offset_right = 1008.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("2_me5i5")
 theme_override_font_sizes/font_size = 39
 text = "Create"
 
 [node name="Queue" type="VBoxContainer" parent="." unique_id=1265035962]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 312.0
 offset_top = -185.0
 offset_right = 522.0
 offset_bottom = 288.0
 
-[node name="Queue_slot" parent="Queue" unique_id=1591241556 instance=ExtResource("12_6wtt4")]
-layout_mode = 2
-
-[connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="Panel/Create" to="." method="_on_create_pressed"]

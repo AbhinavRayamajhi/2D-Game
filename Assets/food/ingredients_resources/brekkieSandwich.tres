@@ -5,6 +5,21 @@
 [ext_resource type="Resource" uid="uid://c02heuycru13d" path="res://Assets/food/ingredients_resources/bread.tres" id="3_2n165"]
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="3_xjf7o"]
 [ext_resource type="Resource" uid="uid://b4vjoieta1esk" path="res://Assets/food/ingredients_resources/egg.tres" id="4_trynk"]
+[ext_resource type="Texture2D" uid="uid://crwhilfns0ccn" path="res://Assets/Sprites/13_bacon.png" id="5_trynk"]
+
+[sub_resource type="Resource" id="Resource_sukel"]
+resource_name = "Bacon"
+script = ExtResource("2_xjf7o")
+title = "Bacon"
+icon = ExtResource("5_trynk")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
+
+[sub_resource type="Resource" id="Resource_vi3im"]
+resource_name = "breakfastSandwich"
+script = ExtResource("2_xjf7o")
+title = "Breakfast Sandwich"
+icon = ExtResource("1_ioj4a")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
 [resource]
 resource_name = "Breakfast Sandwich"
@@ -13,6 +28,8 @@ name = "Breakfast Sandwich"
 icon = ExtResource("1_ioj4a")
 ingredients = Dictionary[ExtResource("2_xjf7o"), int]({
 ExtResource("3_2n165"): 1,
-ExtResource("4_trynk"): 1
+ExtResource("4_trynk"): 1,
+SubResource("Resource_sukel"): 1
 })
+product = SubResource("Resource_vi3im")
 metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
