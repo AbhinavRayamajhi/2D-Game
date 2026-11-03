@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="12_fr884"]
 [ext_resource type="PackedScene" uid="uid://dhi0vtcgvb4u3" path="res://Assets/food/recipe_maker/bread.tscn" id="15_yasws"]
 [ext_resource type="PackedScene" uid="uid://ogbpxxc0lljw" path="res://Assets/food/recipe_maker/cheese.tscn" id="16_5haqo"]
+[ext_resource type="PackedScene" uid="uid://b30rv072olb4r" path="res://Assets/food/recipe_maker/tomato.tscn" id="17_dhvln"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq757"]
 texture = ExtResource("2_k1smo")
@@ -278,19 +279,40 @@ position = Vector2(99, 58)
 position = Vector2(671, -31)
 
 [node name="bread4" parent="Food" unique_id=714803980 instance=ExtResource("15_yasws")]
-position = Vector2(2453, -9)
+position = Vector2(2451, -37)
 
 [node name="bread3" parent="Food" unique_id=1854000250 instance=ExtResource("15_yasws")]
-position = Vector2(1858, -5)
+position = Vector2(1888, -33)
 
 [node name="bread5" parent="Food" unique_id=2123920532 instance=ExtResource("15_yasws")]
 position = Vector2(1290, -5)
 
 [node name="bread6" parent="Food" unique_id=1342215401 instance=ExtResource("15_yasws")]
-position = Vector2(2919, -137)
+position = Vector2(2952, -130)
 
 [node name="Cheese" parent="Food" unique_id=969359312 instance=ExtResource("16_5haqo")]
 position = Vector2(308, -5)
+
+[node name="Cheese2" parent="Food" unique_id=1157740272 instance=ExtResource("16_5haqo")]
+position = Vector2(1520, -27)
+
+[node name="Cheese3" parent="Food" unique_id=129809325 instance=ExtResource("16_5haqo")]
+position = Vector2(966, -26)
+
+[node name="Cheese4" parent="Food" unique_id=22685597 instance=ExtResource("16_5haqo")]
+position = Vector2(2550, -38)
+
+[node name="tomato" parent="Food" unique_id=1865525263 instance=ExtResource("17_dhvln")]
+position = Vector2(477, -26)
+
+[node name="tomato2" parent="Food" unique_id=103587607 instance=ExtResource("17_dhvln")]
+position = Vector2(862, -22)
+
+[node name="tomato3" parent="Food" unique_id=522866481 instance=ExtResource("17_dhvln")]
+position = Vector2(1712, -58)
+
+[node name="tomato4" parent="Food" unique_id=799272759 instance=ExtResource("17_dhvln")]
+position = Vector2(2148, -4)
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]

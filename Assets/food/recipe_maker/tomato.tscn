@@ -80,7 +80,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
 radius = 9.0
 
-[node name="bread" type="Node2D" unique_id=1571938756]
+[node name="tomato" type="Node2D" unique_id=1571938756]
 script = ExtResource("1_y1fkj")
 ingredient = ExtResource("2_0w0kp")
 
