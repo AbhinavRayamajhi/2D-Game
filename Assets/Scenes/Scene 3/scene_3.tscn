@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://drsaqegwcuu5f" path="res://Assets/Scenes/Scene 3/main.png" id="5_oa7l0"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="6_vh811"]
 [ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="9_hr2wg"]
+[ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="9_r7yog"]
 [ext_resource type="PackedScene" uid="uid://b0f6mysjj7ehl" path="res://Assets/Legs/legs.tscn" id="10_oabtc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njo0e"]
@@ -130,6 +131,10 @@ tile_set = SubResource("TileSet_t1gp5")
 
 [node name="Player" parent="." unique_id=482659332 instance=ExtResource("4_1pdd2")]
 texture_filter = 1
+
+[node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("9_r7yog")]
+position = Vector2(223, 415)
+speed = 200.0
 
 [node name="Coins" type="Node" parent="." unique_id=1689669666]
 

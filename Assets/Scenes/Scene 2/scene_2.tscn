@@ -116,6 +116,7 @@ tile_set = SubResource("TileSet_t1gp5")
 
 [node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("9_a1gbn")]
 position = Vector2(-146, -418)
+platform_floor_layers = 4294967289
 
 [node name="Coins" type="Node" parent="." unique_id=1390362854]
 
