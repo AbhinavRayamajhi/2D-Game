@@ -1,5 +1,5 @@
 extends Resource
-class_name Recipe
+class_name cheese_sandwich_Recipe
 
 @export var name: String
 @export var icon: Texture2D
