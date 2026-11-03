@@ -8,9 +8,9 @@ var is_open = false
 
 
 func _ready() -> void:
-	for ingredient in ingredients:
-		if ingredient != null:
-			Global.add_item(ingredient, 10)
+	#for ingredient in ingredients:
+		#if ingredient != null:
+			#Global.add_item(ingredient, 10)
 
 	update_slots()
 	open()

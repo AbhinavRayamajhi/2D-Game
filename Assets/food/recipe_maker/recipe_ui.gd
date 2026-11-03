@@ -26,8 +26,8 @@ func _draw():
 
 func load_recipes():
 	for recipe in recipes:	
-		for ingredient in recipe.ingredients:
-			Global.add_item(ingredient, 10)
+		#for ingredient in recipe.ingredients:
+			#Global.add_item(ingredient, 10)
 		
 		
 		
@@ -68,8 +68,25 @@ func finished_cooking(item : Recipe, node : Panel):
 	node.queue_free()
 	print(item.name + " added.")
 
-	
+func _on_create_pressed() -> void:
+	print("CREATE CLICKED")
+
+	if not selected_recipe:
+		print("NO RECIPE SELECTED")
+		return
+
+	if not Global.check_ingredients(selected_recipe.ingredients):
+		print("NOT ENOUGH ITEMS")
+		return
+
+	Global.use_ingredients(selected_recipe.ingredients)
+	queue_item(selected_recipe)
+	print("QUEUE ADDED")
 
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Assets/Level Select/level_select.tscn")
+
+
+func _on_eat_pressed():
+	Global.eat_food()

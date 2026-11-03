@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ogbpxxc0lljw"]
+
+[ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_v5jdx"]
+[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="2_1g772"]
+[ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="2_v5jdx"]
+[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_vdyx5"]
+[ext_resource type="PackedScene" uid="uid://qw78juin4mth" path="res://Assets/food/burger.tscn" id="3_1g772"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
+atlas = ExtResource("2_1g772")
+region = Rect2(0, 0, 28, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdyx5"]
+atlas = ExtResource("2_v5jdx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1gp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nebj")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nebj")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"bread",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdyx5")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdyx5")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 1,
+"name": &"tomato",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
+radius = 7.071068
+
+[node name="Tomato" type="Node2D" unique_id=1571938756]
+script = ExtResource("1_v5jdx")
+ingredient = ExtResource("2_vdyx5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
+texture_filter = 1
+position = Vector2(-1.1920929e-07, 0)
+sprite_frames = SubResource("SpriteFrames_t1gp5")
+animation = &"tomato"
+autoplay = "tomato"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
+shape = SubResource("CircleShape2D_t1gp5")
+
+[node name="tomato" parent="Area2D" unique_id=1788165784 instance=ExtResource("3_1g772")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

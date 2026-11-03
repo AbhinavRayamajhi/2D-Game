@@ -62,6 +62,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = 2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -128,22 +130,12 @@ layout_mode = 2
 custom_minimum_size = Vector2(508, 86)
 layout_mode = 2
 
-[node name="Create" type="Button" parent="Panel" unique_id=1733839789]
-layout_mode = 0
-offset_left = 858.0
-offset_top = 462.0
-offset_right = 1014.0
-offset_bottom = 551.0
-theme_override_fonts/font = ExtResource("2_me5i5")
-theme_override_font_sizes/font_size = 39
-text = "Create"
-
 [node name="Panel2" type="Panel" parent="." unique_id=1792498756]
 layout_mode = 0
 offset_left = 309.0
-offset_top = -294.0
+offset_top = -316.0
 offset_right = 519.0
-offset_bottom = 147.0
+offset_bottom = 125.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_m2v2m")
 
 [node name="queue" type="Label" parent="Panel2" unique_id=406010640]
@@ -166,10 +158,10 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(210, 250)
 custom_maximum_size = Vector2(-1, 345)
 layout_mode = 0
-offset_left = 33.0
-offset_top = 99.0
-offset_right = 249.0
-offset_bottom = 444.0
+offset_left = -2.0
+offset_top = 85.0
+offset_right = 214.0
+offset_bottom = 430.0
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
@@ -179,6 +171,16 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 alignment = 2
+
+[node name="Create" type="Button" parent="." unique_id=1733839789]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 124.0
+offset_right = 489.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("2_me5i5")
+theme_override_font_sizes/font_size = 39
+text = "Create"
 
 [node name="Back" type="TextureButton" parent="." unique_id=972090426]
 layout_mode = 0
@@ -192,5 +194,17 @@ position = Vector2(104.00001, 48)
 scale = Vector2(0.2522628, 0.28409088)
 texture = ExtResource("13_sukel")
 
-[connection signal="pressed" from="Panel/Create" to="." method="_on_create_pressed"]
+[node name="Eat" type="Button" parent="." unique_id=1783182201]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 225.0
+offset_right = 487.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("2_me5i5")
+theme_override_font_sizes/font_size = 39
+text = "Eat"
+
+[connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Eat" to="." method="_on_eat_pressed"]
+[connection signal="pressed" from="Eat" to="." method="_on_create_pressed"]
