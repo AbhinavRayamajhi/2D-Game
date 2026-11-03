@@ -62,7 +62,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
-radius = 7.071068
+radius = 12.0
 
 [node name="Cheese" type="Node2D" unique_id=1571938756]
 script = ExtResource("1_nman5")
@@ -70,11 +70,11 @@ ingredient = SubResource("Resource_1j4w0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
-position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(1.3125, 1.34375)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"cheese"
 autoplay = "cheese"
-frame_progress = 0.73715603
+frame_progress = 0.3593549
 speed_scale = 0.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2117434567]

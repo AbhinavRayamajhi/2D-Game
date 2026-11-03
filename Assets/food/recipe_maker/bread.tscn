@@ -86,7 +86,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
-radius = 17.0
+radius = 12.0415945
 
 [node name="bread" type="Node2D" unique_id=1571938756]
 script = ExtResource("1_jnps0")
@@ -94,11 +94,11 @@ ingredient = SubResource("Resource_lcka0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
-position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.68518513, 0.6851852)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"bread"
 autoplay = "tomato"
-frame_progress = 0.13512176
+frame_progress = 0.8708325
 speed_scale = 0.5
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2117434567]

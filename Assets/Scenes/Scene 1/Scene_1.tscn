@@ -14,7 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://bwqfm6b8we6rl" path="res://Assets/Music/cosmic-drift-moire-main-version-39705-02-08.mp3" id="8_brr1c"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="8_pokee"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="12_fr884"]
-[ext_resource type="PackedScene" uid="uid://ogbpxxc0lljw" path="res://Assets/food/recipe_maker/cheese.tscn" id="15_yasws"]
+[ext_resource type="PackedScene" uid="uid://dhi0vtcgvb4u3" path="res://Assets/food/recipe_maker/bread.tscn" id="15_yasws"]
+[ext_resource type="PackedScene" uid="uid://ogbpxxc0lljw" path="res://Assets/food/recipe_maker/cheese.tscn" id="16_5haqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vq757"]
 texture = ExtResource("2_k1smo")
@@ -270,11 +271,26 @@ shape = SubResource("WorldBoundaryShape2D_06db0")
 
 [node name="Food" type="Node" parent="." unique_id=947094039]
 
-[node name="Tomato" parent="Food" unique_id=1500997972 instance=ExtResource("15_yasws")]
-position = Vector2(157, 60)
+[node name="bread" parent="Food" unique_id=1724946256 instance=ExtResource("15_yasws")]
+position = Vector2(99, 58)
 
-[node name="Tomato2" parent="Food" unique_id=2118645468 instance=ExtResource("15_yasws")]
-position = Vector2(962, -49)
+[node name="bread2" parent="Food" unique_id=1445116302 instance=ExtResource("15_yasws")]
+position = Vector2(671, -31)
+
+[node name="bread4" parent="Food" unique_id=714803980 instance=ExtResource("15_yasws")]
+position = Vector2(2453, -9)
+
+[node name="bread3" parent="Food" unique_id=1854000250 instance=ExtResource("15_yasws")]
+position = Vector2(1858, -5)
+
+[node name="bread5" parent="Food" unique_id=2123920532 instance=ExtResource("15_yasws")]
+position = Vector2(1290, -5)
+
+[node name="bread6" parent="Food" unique_id=1342215401 instance=ExtResource("15_yasws")]
+position = Vector2(2919, -137)
+
+[node name="Cheese" parent="Food" unique_id=969359312 instance=ExtResource("16_5haqo")]
+position = Vector2(308, -5)
 
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]

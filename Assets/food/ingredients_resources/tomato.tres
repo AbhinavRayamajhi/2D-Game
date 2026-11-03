@@ -6,6 +6,6 @@
 [resource]
 resource_name = "Tomato"
 script = ExtResource("2_flakb")
-title = "Cheese"
+title = "Tomato"
 icon = ExtResource("1_c1ngn")
 metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
