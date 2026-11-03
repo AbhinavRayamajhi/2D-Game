@@ -5,9 +5,9 @@ extends CharacterBody2D
 @onready var wall_detector = $DirectionFlip/WallDetector
 @onready var orientation = $DirectionFlip
 
-const SPEED = 200.0
+@export var speed = 100.0
 const DASH_SPEED = 600.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -380.0
 const WORLD_MASK = 1
 const SCAN_STEP = 16
 const MAX_SCAN = 600
@@ -44,15 +44,16 @@ func _physics_process(delta: float) -> void:
 
 	if chasing:
 		animated_sprite_2d.play("run")
-		direction_x = sign(target.global_position.x - global_position.x)
-		if direction_x != 0: #flip sprite + detectors
+		var dx = target.global_position.x - global_position.x
+		direction_x = sign(dx)
+		if abs(dx) > 2: #flip sprite + detectors
 			orientation.scale.x = direction_x
-		velocity.x = (direction_x * SPEED)
+		velocity.x = (direction_x * speed)
 		if dash_timer > 0.0: #if time in dash jump still remains, reduce it and apply the speed
 			dash_timer -= delta
 			velocity.x = direction_x * DASH_SPEED
 		else: #move at regular speed
-			velocity.x = direction_x * SPEED
+			velocity.x = direction_x * speed
 		var hit_wall = wall_detector.is_colliding()
 		var near_gap = not ground_detector.is_colliding()
 		if is_on_floor() and not jumping:
@@ -66,7 +67,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		if fan_flight and fan_grace <= 0.0 and not apex_checked and not is_on_floor() and velocity.y >= 0:
 			apex_checked = true
-			if not can_land(SPEED):
+			if not can_land(speed):
 				dash_timer = 5.0
 			
 		#if (not ground_detector.has_overlapping_bodies() or wall_detector.has_overlapping_bodies()) and not jumping:
@@ -75,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not attacking:
 			animated_sprite_2d.play("idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 	move_and_slide()
 
 
@@ -113,7 +114,7 @@ func jump_air_time() -> float:
 	
 func choose_jump_for_gap() -> int:
 	var gap = measure_gap()
-	var normal_range = SPEED * jump_air_time()
+	var normal_range = speed * jump_air_time()
 	var double_range = normal_range * 1.7
 	if gap <= normal_range:
 		return JumpType.NORMAL
@@ -145,11 +146,11 @@ func jump(type: int) -> void:
 		dash_timer = jump_air_time()
 	animated_sprite_2d.play("jump")
 	
-func can_land(speed: float) -> bool:
+func can_land(int_speed: float) -> bool:
 	var space = get_world_2d().direct_space_state
 	var g = get_gravity().y
 	var position = global_position + Vector2(0, FEET_OFFSET)
-	var vel = Vector2(direction_x * speed, velocity.y)
+	var vel = Vector2(direction_x * int_speed, velocity.y)
 	var step = 1.0/30.0
 	
 	for i in range(90):

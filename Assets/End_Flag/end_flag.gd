@@ -24,6 +24,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		end_label.show()
 		end_timer.start(end_label_duration)
 		Global.scene_cleared(scene_name)
+		enemy.velocity = Vector2.ZERO
+		
 
 func end_level():
 	get_tree().change_scene_to_file("res://Assets/Level Select/level_select.tscn")
