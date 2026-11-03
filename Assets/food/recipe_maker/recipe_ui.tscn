@@ -138,10 +138,10 @@ text = "Create"
 
 [node name="Queue" type="VBoxContainer" parent="." unique_id=1265035962]
 layout_mode = 0
-offset_left = 344.0
-offset_top = -181.0
-offset_right = 554.0
-offset_bottom = 292.0
+offset_left = 312.0
+offset_top = -185.0
+offset_right = 522.0
+offset_bottom = 288.0
 
 [node name="Queue_slot" parent="Queue" unique_id=1591241556 instance=ExtResource("12_6wtt4")]
 layout_mode = 2
