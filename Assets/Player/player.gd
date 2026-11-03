@@ -110,3 +110,7 @@ func boost_cooldown_reset() -> void:
 	
 func end_level() -> void:
 	get_tree().change_scene_to_file("res://Assets/Level Select/level_select.tscn")
+
+func _process(_delta):
+	if Input.is_key_pressed(KEY_E):
+		Global.eat_food()

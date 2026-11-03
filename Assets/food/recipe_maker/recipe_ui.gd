@@ -89,3 +89,7 @@ func finished_cooking(item: Recipe, node : Panel):
 	print(item.name + " added.")
 
 	
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://Assets/Level Select/level_select.tscn")

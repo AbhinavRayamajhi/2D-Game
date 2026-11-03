@@ -84,3 +84,7 @@ func _on_back_mouse_exited() -> void:
 func _on_button_pressed() -> void:
 	Global.stamina = 1000
 	stamina.text = "Stamina: " + str(Global.stamina) + "/1000"
+
+
+func _on_cook_pressed():
+	get_tree().change_scene_to_file("res://Assets/food/recipe_maker/recipe_ui.tscn")
