@@ -24,8 +24,8 @@ func end_game() -> void:
 	scene_2_cleared = false
 	get_tree().change_scene_to_file("res://Assets/game_over.tscn")
 	
-func add_item(item, amount : int = 1):
-	inventory[item] = inventory.get(item, 0) + amount
+func add_item(ingredient, amount : int = 1):
+	inventory[ingredient] = inventory.get(ingredient, 0) + amount
 	
 func check_ingredients(ingredients : Dictionary):
 	for key in ingredients:

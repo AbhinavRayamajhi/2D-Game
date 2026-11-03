@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
 [ext_resource type="Resource" uid="uid://b64nh4m67iv5i" path="res://Assets/food/ingredients_resources/deluxe_burger.tres" id="8_7cloe"]
 [ext_resource type="Resource" uid="uid://crpt4w7l4qjam" path="res://Assets/food/ingredients_resources/brekkieSandwich.tres" id="9_lkvnj"]
-[ext_resource type="PackedScene" uid="uid://dwomvkdxqit5q" path="res://Assets/food/recipe_maker/queue_slot.tscn" id="12_6wtt4"]
 [ext_resource type="Texture2D" uid="uid://cflmroxfj23br" path="res://Assets/Level Select/Images/Back_button.png" id="13_sukel"]
 
 [sub_resource type="Resource" id="Resource_uoypb"]
@@ -180,18 +179,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 alignment = 2
-
-[node name="queue_slot" parent="Panel2/ScrollContainer/Queue" unique_id=1743634785 instance=ExtResource("12_6wtt4")]
-layout_mode = 2
-
-[node name="queue_slot2" parent="Panel2/ScrollContainer/Queue" unique_id=781352654 instance=ExtResource("12_6wtt4")]
-layout_mode = 2
-
-[node name="queue_slot3" parent="Panel2/ScrollContainer/Queue" unique_id=1824562568 instance=ExtResource("12_6wtt4")]
-layout_mode = 2
-
-[node name="queue_slot4" parent="Panel2/ScrollContainer/Queue" unique_id=546254746 instance=ExtResource("12_6wtt4")]
-layout_mode = 2
 
 [node name="Back" type="TextureButton" parent="." unique_id=972090426]
 layout_mode = 0
