@@ -10,7 +10,7 @@ extends Control
 			free_slots()
 			load_recipes()
 
-@export var recipe_container : VBoxContainer
+@export var recipe_container : VBoxContainer 
 
 var selected_recipe: Recipe
 var selected_rect: Rect2
@@ -39,3 +39,14 @@ func selection(item : Recipe, node : Panel):
 	selected_rect = Rect2(node.global_position, node.size)
 	queue_redraw()
 	print(item.name)
+
+
+func _on_create_pressed() -> void:
+	pass # Replace with function body.
+	
+func finished_cooking(item: Recipe, node : Panel):
+	if item == null:
+		return
+		
+
+	

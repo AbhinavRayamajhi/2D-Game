@@ -1,25 +1,18 @@
 [gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://crpt4w7l4qjam"]
 
-[ext_resource type="Texture2D" uid="uid://cdo884pn88ole" path="res://Assets/food/images/Egg toast.png" id="1_2n165"]
-[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="2_trynk"]
-[ext_resource type="Resource" uid="uid://c02heuycru13d" path="res://Assets/food/ingredients_resources/bread.tres" id="3_82yjh"]
-[ext_resource type="Resource" uid="uid://b4vjoieta1esk" path="res://Assets/food/ingredients_resources/egg.tres" id="4_jaaor"]
-[ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="5_jg2ax"]
-
-[sub_resource type="Resource" id="Resource_k18m0"]
-resource_name = "Breakfast Sandwich"
-script = ExtResource("2_trynk")
-title = "Breakfask Sandwich"
-icon = ExtResource("1_2n165")
-metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
+[ext_resource type="Texture2D" uid="uid://cdo884pn88ole" path="res://Assets/food/images/Egg toast.png" id="1_ioj4a"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="2_xjf7o"]
+[ext_resource type="Resource" uid="uid://c02heuycru13d" path="res://Assets/food/ingredients_resources/bread.tres" id="3_2n165"]
+[ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="3_xjf7o"]
+[ext_resource type="Resource" uid="uid://b4vjoieta1esk" path="res://Assets/food/ingredients_resources/egg.tres" id="4_trynk"]
 
 [resource]
-script = ExtResource("5_jg2ax")
+resource_name = "Breakfast Sandwich"
+script = ExtResource("3_xjf7o")
 name = "Breakfast Sandwich"
-icon = ExtResource("1_2n165")
-ingredients = Dictionary[ExtResource("2_trynk"), int]({
-ExtResource("3_82yjh"): 2,
-ExtResource("4_jaaor"): 1
+icon = ExtResource("1_ioj4a")
+ingredients = Dictionary[ExtResource("2_xjf7o"), int]({
+ExtResource("3_2n165"): 1,
+ExtResource("4_trynk"): 1
 })
-product = SubResource("Resource_k18m0")
-metadata/_custom_type_script = "uid://c2jmk46ba83qc"
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"

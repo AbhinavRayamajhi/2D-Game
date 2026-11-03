@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cjmfuimp3ph2y" path="res://Assets/food/recipe_maker/recipe_ui.gd" id="1_5iooq"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="2_me5i5"]
-[ext_resource type="Script" uid="uid://dhps2acyibi67" path="res://Assets/food/recipe_maker/bread_recipe.gd" id="2_tr0o6"]
 [ext_resource type="Texture2D" uid="uid://ilb5b0pvnv63" path="res://Assets/food/images/pastry_bread.png" id="3_ay78g"]
 [ext_resource type="Resource" uid="uid://fx16cih6abnv" path="res://Assets/food/ingredients_resources/cheeseSandwich.tres" id="3_tr0o6"]
 [ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="4_7cloe"]
@@ -10,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ckuetc2fxy5bk" path="res://Assets/food/recipe_maker/recipe_slot.tscn" id="5_tr0o6"]
 [ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="6_6wtt4"]
 [ext_resource type="Script" uid="uid://c2jmk46ba83qc" path="res://Assets/food/recipe_maker/recipe.gd" id="7_sukel"]
+[ext_resource type="Resource" uid="uid://b64nh4m67iv5i" path="res://Assets/food/ingredients_resources/deluxe_burger.tres" id="8_7cloe"]
+[ext_resource type="Resource" uid="uid://crpt4w7l4qjam" path="res://Assets/food/ingredients_resources/brekkieSandwich.tres" id="9_lkvnj"]
 
 [sub_resource type="Resource" id="Resource_uoypb"]
 resource_name = "Bread"
@@ -51,55 +52,86 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [node name="recipe_ui" type="Control" unique_id=1402113746 node_paths=PackedStringArray("recipe_container")]
+z_index = 1
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_5iooq")
-recipes = Array[ExtResource("2_tr0o6")]([SubResource("Resource_m2v2m"), null, null, null])
+recipes = Array[ExtResource("7_sukel")]([SubResource("Resource_m2v2m"), ExtResource("8_7cloe"), ExtResource("9_lkvnj")])
 recipe_container = NodePath("Panel/recipes2")
 
 [node name="Panel" type="Panel" parent="." unique_id=751475585]
-custom_minimum_size = Vector2(200, 140)
+custom_minimum_size = Vector2(640, 520)
 layout_mode = 1
-offset_right = 200.0
-offset_bottom = 140.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -582.0
+offset_top = -318.0
+offset_right = 320.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ytox")
+
+[node name="recipes2" type="VBoxContainer" parent="Panel" unique_id=1754453814]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -172.0
+offset_right = 252.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="recipe_slot4" parent="Panel/recipes2" unique_id=494146474 instance=ExtResource("5_tr0o6")]
+custom_minimum_size = Vector2(508, 86)
+layout_mode = 2
+
+[node name="recipe_slot" parent="Panel/recipes2" unique_id=2081212115 instance=ExtResource("5_tr0o6")]
+custom_minimum_size = Vector2(508, 86)
+layout_mode = 2
+
+[node name="recipe_slot3" parent="Panel/recipes2" unique_id=512852108 instance=ExtResource("5_tr0o6")]
+custom_minimum_size = Vector2(508, 86)
+layout_mode = 2
 
 [node name="recipes" type="Label" parent="Panel" unique_id=977571419]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -68.5
-offset_right = 68.5
-offset_bottom = 40.0
+offset_left = -101.0
+offset_top = 28.0
+offset_right = 100.0
+offset_bottom = 122.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_me5i5")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 60
 text = "Recipes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="recipes2" type="VBoxContainer" parent="Panel" unique_id=1297596754]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -190.0
-offset_top = -31.999996
-offset_bottom = 66.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.92676526, 0.830565)
-alignment = 1
+[node name="Create" type="Button" parent="." unique_id=1733839789]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 134.0
+offset_right = 445.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("2_me5i5")
+text = "Create"
 
-[node name="recipe_slot" parent="Panel/recipes2" unique_id=2081212115 instance=ExtResource("5_tr0o6")]
-layout_mode = 2
-
-[node name="recipe_slot2" parent="Panel/recipes2" unique_id=2044740251 instance=ExtResource("5_tr0o6")]
-layout_mode = 2
+[connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
