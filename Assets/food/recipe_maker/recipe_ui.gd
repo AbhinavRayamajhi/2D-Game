@@ -77,7 +77,12 @@ func _on_create_pressed() -> void:
 
 	if not Global.check_ingredients(selected_recipe.ingredients):
 		print("NOT ENOUGH ITEMS")
-		return
+
+	for ingredient in selected_recipe.ingredients:
+		print(ingredient.title)
+		print("Needed: ", selected_recipe.ingredients[ingredient])
+		print("Have: ", Global.inventory.get(ingredient, 0))
+	return
 
 	Global.use_ingredients(selected_recipe.ingredients)
 	queue_item(selected_recipe)

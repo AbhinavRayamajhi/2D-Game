@@ -7,10 +7,10 @@ extends Area2D
 func _on_body_entered(body):
 	if body is Player:
 		if ingredient == null:
-			print("Ingredient resource missing!")
+			print("Missing ingredient on: ", name)
 			return
 
 		Global.add_item(ingredient, 1)
 		print("Collected: ", ingredient.title)
-		print("Total: ", Global.inventory[ingredient])
+		print("Total: ", Global.inventory[ingredient.title])
 		queue_free()

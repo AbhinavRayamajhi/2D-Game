@@ -280,7 +280,7 @@ position = Vector2(1888, -33)
 position = Vector2(864, -2)
 
 [node name="bread" parent="Food" unique_id=1724946256 instance=ExtResource("15_yasws")]
-position = Vector2(99, 58)
+position = Vector2(70, 63)
 
 [node name="bread2" parent="Food" unique_id=1445116302 instance=ExtResource("15_yasws")]
 position = Vector2(671, -31)
