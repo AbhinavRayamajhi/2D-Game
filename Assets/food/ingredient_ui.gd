@@ -3,7 +3,6 @@ extends Control
 @export var ingredients : Array[item] = []
 @onready var slots: Array = $ColorRect/GridContainer.get_children()
 
-
 var is_open = false
 
 
