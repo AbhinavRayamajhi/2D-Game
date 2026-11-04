@@ -218,10 +218,10 @@ offset_bottom = -216.0
 
 [node name="Stamina" type="TextureProgressBar" parent="HUD" unique_id=1497033515]
 layout_mode = 0
-offset_left = 0.57499415
-offset_top = -6.3249407
-offset_right = 50.574993
-offset_bottom = -0.32494068
+offset_left = -22.424763
+offset_top = -18.974806
+offset_right = 27.575237
+offset_bottom = -12.649874
 max_value = 1000.0
 texture_under = SubResource("GradientTexture2D_kg0wl")
 texture_progress = SubResource("GradientTexture2D_rul8u")

@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bbt6au2lj37bj" path="res://Assets/Future TimeSplitters.otf" id="1_foum2"]
 [ext_resource type="Script" uid="uid://cyj36docnyjeh" path="res://Assets/game_over.gd" id="1_rly5x"]
+[ext_resource type="AudioStream" uid="uid://cudk3yfi10b3r" path="res://Assets/Music/game-over-horns-epic-stock-media-1-00-03.mp3" id="2_l0tlw"]
 [ext_resource type="FontFile" uid="uid://05urw78xhqho" path="res://Assets/Pixelated Elegance.ttf" id="2_rly5x"]
 [ext_resource type="StyleBox" uid="uid://dsp34e0n2lxxm" path="res://Assets/game_over.tres" id="3_l0tlw"]
 
@@ -103,6 +104,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rly5x")
+game_over_music = ExtResource("2_l0tlw")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=526225287]
 layout_mode = 1
