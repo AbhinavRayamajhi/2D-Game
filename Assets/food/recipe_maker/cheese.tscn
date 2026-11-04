@@ -68,7 +68,7 @@ scale = Vector2(1.3125, 1.34375)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"cheese"
 autoplay = "cheese"
-frame_progress = 0.8316107
+frame_progress = 0.32139167
 speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654963521]
