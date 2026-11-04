@@ -3,27 +3,13 @@
 [ext_resource type="Script" uid="uid://bg5defnkgnpdq" path="res://Assets/food/ingredient_ui.gd" id="1_vnlai"]
 [ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="2_na1sf"]
 [ext_resource type="Texture2D" uid="uid://b06mook465swo" path="res://Assets/food/images/inventory-background.png" id="2_qp055"]
-[ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="3_2wo3c"]
 [ext_resource type="PackedScene" uid="uid://yhcnmfpouqfq" path="res://Assets/food/ingredient_slot_ui.tscn" id="3_qp055"]
-[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="4_mc7a3"]
+[ext_resource type="Resource" uid="uid://c02heuycru13d" path="res://Assets/food/ingredients_resources/bread.tres" id="4_mdm68"]
 [ext_resource type="Resource" uid="uid://b0t3mojrropqj" path="res://Assets/food/ingredients_resources/bacon.tres" id="5_gs171"]
 [ext_resource type="Resource" uid="uid://cu66xqlvqmiw2" path="res://Assets/food/ingredients_resources/cheese.tres" id="6_mc7a3"]
 [ext_resource type="Resource" uid="uid://b4vjoieta1esk" path="res://Assets/food/ingredients_resources/egg.tres" id="7_5gdyv"]
 [ext_resource type="Resource" uid="uid://b3iqe1tvji8ms" path="res://Assets/food/ingredients_resources/lettucee.tres" id="8_jr1gk"]
-
-[sub_resource type="Resource" id="Resource_qp055"]
-resource_name = "Tomato"
-script = ExtResource("2_na1sf")
-title = "Tomato"
-icon = ExtResource("3_2wo3c")
-metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
-
-[sub_resource type="Resource" id="Resource_5gdyv"]
-resource_name = "Bread"
-script = ExtResource("2_na1sf")
-title = "Bread"
-icon = ExtResource("4_mc7a3")
-metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
+[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="8_mc7a3"]
 
 [node name="ingredient_ui" type="Control" unique_id=369010407]
 layout_mode = 3
@@ -31,7 +17,7 @@ anchors_preset = 0
 offset_right = 60.0
 offset_bottom = 74.0
 script = ExtResource("1_vnlai")
-ingredients = Array[ExtResource("2_na1sf")]([SubResource("Resource_qp055"), SubResource("Resource_5gdyv"), ExtResource("5_gs171"), ExtResource("6_mc7a3"), ExtResource("7_5gdyv"), ExtResource("8_jr1gk")])
+ingredients = Array[ExtResource("2_na1sf")]([ExtResource("4_mdm68"), ExtResource("5_gs171"), ExtResource("6_mc7a3"), ExtResource("8_jr1gk"), ExtResource("7_5gdyv"), ExtResource("8_mc7a3")])
 
 [node name="ColorRect" type="NinePatchRect" parent="." unique_id=648824891]
 layout_mode = 0

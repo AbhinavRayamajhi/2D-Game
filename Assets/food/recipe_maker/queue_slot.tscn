@@ -19,10 +19,26 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="." unique_id=802731469]
+
+[node name="MealIcon" type="TextureRect" parent="." unique_id=1437963654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -16.0
+offset_right = -39.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Cancel" type="Button" parent="." unique_id=263213902]
 layout_mode = 0

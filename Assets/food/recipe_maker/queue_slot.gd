@@ -1,6 +1,8 @@
 
 extends Panel
 
+@onready var meal_icon: TextureRect = $MealIcon
+
 signal completed(item, node)
 
 var recipe : Recipe:
@@ -22,20 +24,24 @@ var cook_time : float = 0:
 	set(value):
 		cook_time = value
 		if is_node_ready():
-			$ProgressBar.max_value = max(value, 0.01)
+			$ProgressBar.max_value = cook_time
+			$ProgressBar.value = 0
+
 
 
 var time : float = 0:
 	set(value):
 		time = value
 		if is_node_ready():
-			$ProgressBar.value = value
-
+			$ProgressBar.max_value = cook_time
+			$ProgressBar.value = 0
+			meal_icon.texture = recipe.product.icon
 
 func _ready():
 	if recipe != null:
 		$ProgressBar.max_value = cook_time
 		$ProgressBar.value = time
+		meal_icon.texture = recipe.product.icon
 
 
 func _physics_process(delta):
