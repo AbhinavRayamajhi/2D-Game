@@ -26,17 +26,15 @@ func end_game() -> void:
 	
 func add_item(ingredient, amount : int = 1):
 	inventory[ingredient.title] = inventory.get(ingredient.title, 0) + amount
-	
+
 func check_ingredients(ingredients : Dictionary):
 	for key in ingredients:
 		if inventory.get(key.title, 0) < ingredients[key]:
 			return false
 	return true
-	
+
 func remove_item(ingredient, amount : int = 1):
 	inventory[ingredient.title] = max(0, inventory.get(ingredient.title, 0) - amount)
-
-
 
 func use_ingredients(ingredients : Dictionary):
 	for key in ingredients:
