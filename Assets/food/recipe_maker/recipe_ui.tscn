@@ -54,6 +54,12 @@ corner_detail = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2v2m"]
 bg_color = Color(0.30943933, 0.23209421, 0.15594886, 0.70900005)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sukel"]
+bg_color = Color(0.15730551, 0.122111, 0.09157773, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cicih"]
+bg_color = Color(0, 0.5529412, 0.6117647, 1)
+
 [node name="recipe_ui" type="Control" unique_id=1402113746 node_paths=PackedStringArray("recipe_container")]
 z_index = 1
 layout_mode = 3
@@ -175,11 +181,12 @@ alignment = 2
 [node name="Create" type="Button" parent="." unique_id=1733839789]
 layout_mode = 0
 offset_left = 333.0
-offset_top = 124.0
+offset_top = 131.0
 offset_right = 489.0
-offset_bottom = 213.0
+offset_bottom = 220.0
 theme_override_fonts/font = ExtResource("2_me5i5")
 theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_sukel")
 text = "Create"
 
 [node name="Back" type="TextureButton" parent="." unique_id=972090426]
@@ -202,6 +209,7 @@ offset_right = 487.0
 offset_bottom = 314.0
 theme_override_fonts/font = ExtResource("2_me5i5")
 theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_cicih")
 text = "Eat"
 
 [connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
