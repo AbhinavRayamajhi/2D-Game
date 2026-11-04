@@ -10,5 +10,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	coins.text = "Coins: " + str(Global.current_coins)
+	
 	stamina.value = Global.stamina

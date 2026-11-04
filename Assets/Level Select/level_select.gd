@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var coins: Label = $Coins
 @onready var stamina: Label = $Stamina
 
 @onready var cave: TextureButton = $Cave
@@ -17,7 +16,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	coins.text = "Coins: " + str(Global.current_coins)
 	stamina.text = "Stamina: " + str(Global.stamina) + "/1000"
 	if Global.scene_1_cleared:
 		cave_complete.show()

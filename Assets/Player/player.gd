@@ -50,8 +50,7 @@ func _physics_process(delta: float) -> void:
 		out_of_stamina.show()
 		end_timer.start()
 		level_ended = true
-		if Global.current_coins <= 0:
-			Global.end_game()
+		
 		return
 		
 	# Get the input direction and handle the movement/deceleration.

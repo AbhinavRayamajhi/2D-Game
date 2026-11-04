@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="4_1pdd2"]
 [ext_resource type="Texture2D" uid="uid://drsaqegwcuu5f" path="res://Assets/Scenes/Scene 3/main.png" id="5_oa7l0"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="6_vh811"]
-[ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="9_hr2wg"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="9_r7yog"]
 [ext_resource type="PackedScene" uid="uid://b0f6mysjj7ehl" path="res://Assets/Legs/legs.tscn" id="10_oabtc"]
 [ext_resource type="PackedScene" uid="uid://dhi0vtcgvb4u3" path="res://Assets/food/recipe_maker/bread.tscn" id="13_n7isn"]
@@ -141,48 +140,6 @@ texture_filter = 1
 [node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("9_r7yog")]
 position = Vector2(223, 415)
 speed = 200.0
-
-[node name="Coins" type="Node" parent="." unique_id=1689669666]
-
-[node name="Coin" parent="Coins" unique_id=1571938756 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2389, -262)
-
-[node name="Coin2" parent="Coins" unique_id=248820504 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2481, -103)
-
-[node name="Coin3" parent="Coins" unique_id=571525922 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2584, 17)
-
-[node name="Coin4" parent="Coins" unique_id=1369787301 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2671, 124)
-
-[node name="Coin5" parent="Coins" unique_id=878348146 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2759, 206)
-
-[node name="Coin6" parent="Coins" unique_id=1662223429 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(2897, 233)
-
-[node name="Coin7" parent="Coins" unique_id=173681341 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(3019, 267)
-
-[node name="Coin8" parent="Coins" unique_id=2146078624 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(1309, 106)
-
-[node name="Coin9" parent="Coins" unique_id=1528383236 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(1577, 33)
-
-[node name="Coin10" parent="Coins" unique_id=17132129 instance=ExtResource("9_hr2wg")]
-visible = false
-position = Vector2(1839, -23)
 
 [node name="Fans" type="Node" parent="." unique_id=1451302492]
 

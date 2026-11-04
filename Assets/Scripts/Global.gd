@@ -1,7 +1,6 @@
 extends Node
 
 # Global
-var current_coins:int = 0
 var stamina:int = 1000
 
 var scene_1_cleared:bool = false
@@ -19,7 +18,6 @@ func scene_cleared(scene: String) -> void:
 
 func end_game() -> void:
 	stamina = 1000
-	current_coins = 0
 	scene_1_cleared = false
 	scene_2_cleared = false
 	get_tree().change_scene_to_file("res://Assets/game_over.tscn")
@@ -47,6 +45,9 @@ func eat_food():
 			inventory[food_name] -= 1
 			stamina = min(stamina + 250, 1000)
 			print("Food eaten! Stamina: ", stamina)
-			return
+			return true
+
+	print("No cooked food!")
+	return false
 
 	print("No cooked food!")

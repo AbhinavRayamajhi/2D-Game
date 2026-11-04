@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dbxgyyhjl5jqf" path="res://Assets/Scenes/Scene 2/Tiles/sprite_sheet.png" id="5_pc5pt"]
 [ext_resource type="PackedScene" uid="uid://cogf44ov76c3u" path="res://Assets/Player/Player.tscn" id="6_0dxyp"]
 [ext_resource type="PackedScene" uid="uid://cwo10oa0haur7" path="res://Assets/Fan/fan.tscn" id="8_3gase"]
-[ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="8_6gbfa"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="9_a1gbn"]
 [ext_resource type="PackedScene" uid="uid://cb8y4mra5f24u" path="res://Assets/End_Flag/end_Flag.tscn" id="10_g105j"]
 [ext_resource type="PackedScene" uid="uid://b30rv072olb4r" path="res://Assets/food/recipe_maker/tomato.tscn" id="12_f4u7j"]
@@ -123,40 +122,6 @@ tile_set = SubResource("TileSet_t1gp5")
 [node name="Enemy" parent="." unique_id=1876571806 instance=ExtResource("9_a1gbn")]
 position = Vector2(-146, -418)
 platform_floor_layers = 4294967289
-
-[node name="Coins" type="Node" parent="." unique_id=1390362854]
-
-[node name="Coin" parent="Coins" unique_id=1571938756 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(238, 83)
-
-[node name="Coin2" parent="Coins" unique_id=1122121486 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(334, 81)
-
-[node name="Coin3" parent="Coins" unique_id=921254887 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(435, 83)
-
-[node name="Coin4" parent="Coins" unique_id=1719478900 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(525, 84)
-
-[node name="Coin5" parent="Coins" unique_id=1941383535 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(1715, 84)
-
-[node name="Coin6" parent="Coins" unique_id=652461495 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(1843, 83)
-
-[node name="Coin7" parent="Coins" unique_id=232116364 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(2962, 84)
-
-[node name="Coin8" parent="Coins" unique_id=1244671784 instance=ExtResource("8_6gbfa")]
-visible = false
-position = Vector2(3091, 84)
 
 [node name="Death Plane" type="Area2D" parent="." unique_id=1865859411]
 collision_mask = 6
