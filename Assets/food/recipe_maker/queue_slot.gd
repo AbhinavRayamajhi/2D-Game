@@ -17,8 +17,6 @@ var recipe : Recipe:
 
 		if is_node_ready():
 			$ProgressBar.max_value = cook_time
-			$ProgressBar.value = 0
-
 
 var cook_time : float = 0:
 	set(value):
@@ -34,7 +32,7 @@ var time : float = 0:
 		time = value
 		if is_node_ready():
 			$ProgressBar.max_value = cook_time
-			$ProgressBar.value = 0
+			$ProgressBar.value = value
 			meal_icon.texture = recipe.product.icon
 
 func _ready():
@@ -45,15 +43,17 @@ func _ready():
 
 
 func _physics_process(delta):
+	time += delta
+	$ProgressBar.value = time
 	if recipe == null:
 		return
 
-	if get_index() == 0:
-		time += delta
+	print("Cooking: ", time)
+	time += delta
 
-		if time >= cook_time:
-			set_physics_process(false)
-			completed.emit(recipe, self)
+	if time >= cook_time:
+		set_physics_process(false)
+		completed.emit(recipe, self)
 
 
 func _on_cancel_pressed():
