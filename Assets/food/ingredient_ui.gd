@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 func open():
 	visible = true
 	is_open = true
+	update_slots()
 	
 func close():
 	visible = false
