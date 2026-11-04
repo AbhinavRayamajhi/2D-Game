@@ -10,14 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://cflmroxfj23br" path="res://Assets/Level Select/Images/Back_button.png" id="6_5o328"]
 [ext_resource type="FontFile" uid="uid://djst6vlui2wtj" path="res://Assets/Main Menu/Eastwood.ttf" id="9_1x4m2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1x4m2"]
+bg_color = Color(0, 0.59027946, 0.5930864, 1)
+
 [node name="LevelSelect" type="Node2D" unique_id=1681085335]
 script = ExtResource("1_nb0ai")
 level_select_music = ExtResource("2_16w2i")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2066064752]
 texture_filter = 1
-position = Vector2(-3, 26.000002)
-scale = Vector2(2.5, 2.5)
+position = Vector2(1, 6)
+scale = Vector2(2.7481148, 2.823214)
 texture = ExtResource("1_qlsm8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=768380935]
@@ -138,12 +141,13 @@ offset_bottom = 289.0
 text = "Click to restore stamina"
 
 [node name="Cook" type="Button" parent="." unique_id=464274233]
-offset_left = 474.0
-offset_top = 228.0
-offset_right = 613.0
-offset_bottom = 299.0
+offset_left = 404.0
+offset_top = 218.0
+offset_right = 543.0
+offset_bottom = 281.0
 theme_override_fonts/font = ExtResource("9_1x4m2")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1x4m2")
 text = "Cook"
 
 [connection signal="mouse_entered" from="Cave" to="." method="_on_cave_mouse_entered"]
