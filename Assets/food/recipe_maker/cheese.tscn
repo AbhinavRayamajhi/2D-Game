@@ -2,15 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_nman5"]
 [ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="2_jn3fy"]
-[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_caqdu"]
+[ext_resource type="Resource" uid="uid://cu66xqlvqmiw2" path="res://Assets/food/ingredients_resources/cheese.tres" id="2_nman5"]
 [ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="3_n0e8b"]
-
-[sub_resource type="Resource" id="Resource_1j4w0"]
-resource_name = "Cheese"
-script = ExtResource("3_caqdu")
-title = "Cheese"
-icon = ExtResource("2_jn3fy")
-metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
 atlas = ExtResource("3_n0e8b")
@@ -64,9 +57,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
 radius = 12.0
 
-[node name="Cheese" type="Node2D" unique_id=1571938756]
+[node name="Cheese" type="Area2D" unique_id=2117434567]
+collision_mask = 6
 script = ExtResource("1_nman5")
-ingredient = SubResource("Resource_1j4w0")
+ingredient = ExtResource("2_nman5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
@@ -74,13 +68,10 @@ scale = Vector2(1.3125, 1.34375)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"cheese"
 autoplay = "cheese"
-frame_progress = 0.3593549
+frame_progress = 0.8316107
 speed_scale = 0.5
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654963521]
 shape = SubResource("CircleShape2D_t1gp5")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

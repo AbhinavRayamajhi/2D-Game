@@ -1,102 +1,55 @@
 [gd_scene format=3 uid="uid://b30rv072olb4r"]
 
 [ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_y1fkj"]
-[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_0w0kp"]
-[ext_resource type="Texture2D" uid="uid://crwhilfns0ccn" path="res://Assets/Sprites/13_bacon.png" id="3_86q4b"]
-[ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="4_qdphi"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_jxh4y"]
 [ext_resource type="Texture2D" uid="uid://dpl7k8bu4uqy3" path="res://Assets/food/images/vegetable_tomato.png" id="5_rhlt0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
-atlas = ExtResource("4_qdphi")
-region = Rect2(0, 0, 28, 27)
+[sub_resource type="Resource" id="Resource_1aecy"]
+resource_name = "Tomato"
+script = ExtResource("3_jxh4y")
+title = "Tomato"
+icon = ExtResource("5_rhlt0")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vdyx5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ej2w"]
 atlas = ExtResource("5_rhlt0")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t1gp5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nf2bk"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_rhlt0")
+"texture": SubResource("AtlasTexture_4ej2w")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rhlt0")
-}, {
-"duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rhlt0")
+"texture": SubResource("AtlasTexture_4ej2w")
 }],
 "loop": 1,
-"name": &"bacon",
+"name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1nebj")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1nebj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_86q4b")
-}],
-"loop": 1,
-"name": &"bread",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vdyx5")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vdyx5")
-}, {
-"duration": 1.0,
-"texture": null
-}],
-"loop": 1,
-"name": &"tomato",
-"speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
-radius = 9.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_h331j"]
+radius = 13.038404
 
-[node name="tomato" type="Node2D" unique_id=1571938756]
+[node name="tomato" type="Area2D" unique_id=1788165784]
+collision_mask = 2
 script = ExtResource("1_y1fkj")
-ingredient = ExtResource("2_0w0kp")
+ingredient = SubResource("Resource_1aecy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
-texture_filter = 1
-position = Vector2(-1.1920929e-07, 0)
-sprite_frames = SubResource("SpriteFrames_t1gp5")
-animation = &"bacon"
-autoplay = "tomato"
-frame_progress = 0.60572356
-speed_scale = 0.5
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1564734363]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_nf2bk")
+frame_progress = 0.43590832
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
-collision_mask = 6
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1943006069]
+shape = SubResource("CircleShape2D_h331j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
-shape = SubResource("CircleShape2D_t1gp5")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

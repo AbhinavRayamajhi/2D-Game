@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://mvkkwnf53201"]
 
 [ext_resource type="Script" uid="uid://cu58f2uht4hsc" path="res://Assets/food/recipe_maker/ingredient_pickup.gd" id="1_swj4p"]
-[ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="2_lw7w7"]
 [ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="3_f4ljd"]
+[ext_resource type="Script" uid="uid://bxcqdkf8hhxb5" path="res://Assets/food/ingredient_item.gd" id="3_swj4p"]
 [ext_resource type="Texture2D" uid="uid://dntii37vwdo8y" path="res://Assets/food/images/fruit_greengrape.png" id="4_lw7w7"]
+
+[sub_resource type="Resource" id="Resource_a1gsr"]
+resource_name = "Lettuce"
+script = ExtResource("3_swj4p")
+title = "Lettuce"
+icon = ExtResource("4_lw7w7")
+metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nebj"]
 atlas = ExtResource("3_f4ljd")
@@ -50,11 +57,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
-radius = 7.071068
+radius = 11.0
 
-[node name="lettuce" type="Node2D" unique_id=1571938756]
+[node name="lettuce" type="Area2D" unique_id=2117434567]
+collision_mask = 6
 script = ExtResource("1_swj4p")
-ingredient = ExtResource("2_lw7w7")
+ingredient = SubResource("Resource_a1gsr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=986884698]
 texture_filter = 1
@@ -62,13 +70,10 @@ position = Vector2(-1.1920929e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"tomato"
 autoplay = "tomato"
-frame_progress = 0.8894448
+frame_progress = 0.36917895
 speed_scale = 0.5
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654963521]
 shape = SubResource("CircleShape2D_t1gp5")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

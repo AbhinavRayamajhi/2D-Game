@@ -12,6 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://c6t0wvi18ifvq" path="res://Assets/Coin/coin.tscn" id="9_hr2wg"]
 [ext_resource type="PackedScene" uid="uid://dlxoua6ijxul2" path="res://mafia1.tscn" id="9_r7yog"]
 [ext_resource type="PackedScene" uid="uid://b0f6mysjj7ehl" path="res://Assets/Legs/legs.tscn" id="10_oabtc"]
+[ext_resource type="PackedScene" uid="uid://dhi0vtcgvb4u3" path="res://Assets/food/recipe_maker/bread.tscn" id="13_n7isn"]
+[ext_resource type="PackedScene" uid="uid://b0xb7bp3s3dy7" path="res://Assets/food/recipe_maker/bacon.tscn" id="13_qeta0"]
+[ext_resource type="PackedScene" uid="uid://b6xvkgu0q6dmy" path="res://Assets/food/recipe_maker/eggs.tscn" id="14_8loxk"]
+[ext_resource type="PackedScene" uid="uid://mvkkwnf53201" path="res://Assets/food/recipe_maker/lettuce.tscn" id="15_kskpm"]
+[ext_resource type="PackedScene" uid="uid://ogbpxxc0lljw" path="res://Assets/food/recipe_maker/cheese.tscn" id="15_yguhq"]
+[ext_resource type="PackedScene" uid="uid://b30rv072olb4r" path="res://Assets/food/recipe_maker/tomato.tscn" id="18_bufqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njo0e"]
 texture = ExtResource("5_oa7l0")
@@ -139,33 +145,43 @@ speed = 200.0
 [node name="Coins" type="Node" parent="." unique_id=1689669666]
 
 [node name="Coin" parent="Coins" unique_id=1571938756 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2389, -262)
 
 [node name="Coin2" parent="Coins" unique_id=248820504 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2481, -103)
 
 [node name="Coin3" parent="Coins" unique_id=571525922 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2584, 17)
 
 [node name="Coin4" parent="Coins" unique_id=1369787301 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2671, 124)
 
 [node name="Coin5" parent="Coins" unique_id=878348146 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2759, 206)
 
 [node name="Coin6" parent="Coins" unique_id=1662223429 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(2897, 233)
 
 [node name="Coin7" parent="Coins" unique_id=173681341 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(3019, 267)
 
 [node name="Coin8" parent="Coins" unique_id=2146078624 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(1309, 106)
 
 [node name="Coin9" parent="Coins" unique_id=1528383236 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(1577, 33)
 
 [node name="Coin10" parent="Coins" unique_id=17132129 instance=ExtResource("9_hr2wg")]
+visible = false
 position = Vector2(1839, -23)
 
 [node name="Fans" type="Node" parent="." unique_id=1451302492]
@@ -205,5 +221,44 @@ position = Vector2(3354, 268)
 collision_layer = 1
 collision_mask = 3
 
+[node name="food" type="Node" parent="." unique_id=1191422983]
+
+[node name="bread" parent="food" unique_id=203189031 instance=ExtResource("13_n7isn")]
+position = Vector2(1757, -24)
+
+[node name="egg" parent="food" unique_id=1745277273 instance=ExtResource("14_8loxk")]
+position = Vector2(1502, 50)
+
+[node name="egg2" parent="food" unique_id=1866940234 instance=ExtResource("14_8loxk")]
+position = Vector2(2255, -209)
+
+[node name="bacon2" parent="food" unique_id=814670639 instance=ExtResource("13_qeta0")]
+position = Vector2(1307, 125)
+
+[node name="bacon" parent="food" unique_id=318555118 instance=ExtResource("13_qeta0")]
+position = Vector2(473, 433)
+
+[node name="cheese" parent="food" unique_id=503847376 instance=ExtResource("15_yguhq")]
+position = Vector2(981, 185)
+
+[node name="lettuce" parent="food" unique_id=1735318372 instance=ExtResource("15_kskpm")]
+position = Vector2(146, 108)
+
+[node name="lettuce2" parent="food" unique_id=1719462576 instance=ExtResource("15_kskpm")]
+position = Vector2(3096, 295)
+
+[node name="lettuce3" parent="food" unique_id=1573087689 instance=ExtResource("15_kskpm")]
+position = Vector2(1883, -112)
+
+[node name="tomato" parent="food" unique_id=2050868766 instance=ExtResource("18_bufqv")]
+position = Vector2(2386, 148)
+
+[node name="tomato3" parent="food" unique_id=822594280 instance=ExtResource("18_bufqv")]
+position = Vector2(1077, 22)
+
+[node name="tomato4" parent="food" unique_id=1124319211 instance=ExtResource("18_bufqv")]
+position = Vector2(2016, -146)
+
 [connection signal="body_entered" from="Death Plane" to="." method="_on_death_plane_entered"]
 [connection signal="body_entered" from="Checkpoints/Checkpoint 1" to="." method="_on_checkpoint_1_body_entered"]
+[connection signal="body_entered" from="food/lettuce3" to="." method="_on_lettuce_3_body_entered"]
