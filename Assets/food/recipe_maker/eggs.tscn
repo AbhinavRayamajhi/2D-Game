@@ -55,7 +55,8 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t1gp5"]
 
-[node name="Tomato" type="Node2D" unique_id=1571938756]
+[node name="Egg" type="Area2D" unique_id=2117434567]
+collision_mask = 6
 script = ExtResource("1_8l2j3")
 ingredient = ExtResource("2_8l2j3")
 
@@ -65,13 +66,10 @@ position = Vector2(-1.1920929e-07, 0)
 sprite_frames = SubResource("SpriteFrames_t1gp5")
 animation = &"tomato"
 autoplay = "tomato"
-frame_progress = 0.6319689
+frame_progress = 0.74240625
 speed_scale = 0.5
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2117434567]
-collision_mask = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654963521]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654963521]
 shape = SubResource("CircleShape2D_t1gp5")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

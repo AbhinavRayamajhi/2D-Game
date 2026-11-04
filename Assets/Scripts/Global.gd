@@ -25,17 +25,16 @@ func end_game() -> void:
 	get_tree().change_scene_to_file("res://Assets/game_over.tscn")
 	
 func add_item(ingredient, amount : int = 1):
-	inventory[ingredient] = inventory.get(ingredient, 0) + amount
-	
+	inventory[ingredient.title] = inventory.get(ingredient.title, 0) + amount
+
 func check_ingredients(ingredients : Dictionary):
 	for key in ingredients:
-		if inventory.get(key, 0) < ingredients[key]:
+		if inventory.get(key.title, 0) < ingredients[key]:
 			return false
 	return true
-	
-func remove_item(item, amount : int = 1):
-	inventory[item] = max(0, inventory.get(item, 0) - amount)
 
+func remove_item(ingredient, amount : int = 1):
+	inventory[ingredient.title] = max(0, inventory.get(ingredient.title, 0) - amount)
 
 func use_ingredients(ingredients : Dictionary):
 	for key in ingredients:

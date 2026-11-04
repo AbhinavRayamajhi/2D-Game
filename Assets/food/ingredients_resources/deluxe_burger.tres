@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0g2jay0cdvck" path="res://Assets/food/images/Toast.png" id="3_awtmi"]
 [ext_resource type="Texture2D" uid="uid://dubpq5v3q34at" path="res://Assets/food/images/cheese_gouda.png" id="5_awtmi"]
 [ext_resource type="Resource" uid="uid://c7041c1d6imgk" path="res://Assets/food/ingredients_resources/tomato.tres" id="5_eghde"]
+[ext_resource type="Resource" uid="uid://b3iqe1tvji8ms" path="res://Assets/food/ingredients_resources/lettucee.tres" id="6_awtmi"]
 [ext_resource type="Texture2D" uid="uid://crwhilfns0ccn" path="res://Assets/Sprites/13_bacon.png" id="6_vq56a"]
 
 [sub_resource type="Resource" id="Resource_trynk"]
@@ -15,7 +16,7 @@ title = "Bread"
 icon = ExtResource("3_awtmi")
 metadata/_custom_type_script = "uid://bxcqdkf8hhxb5"
 
-[sub_resource type="Resource" id="Resource_jaaor"]
+[sub_resource type="Resource" id="Resource_1j4w0"]
 resource_name = "Cheese"
 script = ExtResource("2_h0m8q")
 title = "Cheese"
@@ -42,9 +43,10 @@ name = "Deluxe Burger"
 icon = ExtResource("1_uehku")
 ingredients = Dictionary[ExtResource("2_h0m8q"), int]({
 SubResource("Resource_trynk"): 2,
-ExtResource("5_eghde"): 1,
-SubResource("Resource_jaaor"): 1,
-SubResource("Resource_13aws"): 1
+SubResource("Resource_1j4w0"): 2,
+SubResource("Resource_13aws"): 1,
+ExtResource("6_awtmi"): 2,
+ExtResource("5_eghde"): 1
 })
 product = SubResource("Resource_7cloe")
 cook_time = 9.0

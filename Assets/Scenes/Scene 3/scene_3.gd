@@ -45,3 +45,7 @@ func _on_checkpoint_1_body_entered(body: Node2D) -> void:
 	elif body == enemy:
 		enemy_pos_x = checkpoint_1.position.x
 		enemy_pos_y = checkpoint_1.position.y
+
+
+func _on_lettuce_3_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
