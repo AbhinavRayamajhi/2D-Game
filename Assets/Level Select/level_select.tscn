@@ -19,11 +19,12 @@ level_select_music = ExtResource("2_16w2i")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2066064752]
 texture_filter = 1
-position = Vector2(1, 6)
-scale = Vector2(2.7481148, 2.823214)
+position = Vector2(6.500038, 39)
+scale = Vector2(2.0550623, 2.6071432)
 texture = ExtResource("1_qlsm8")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=768380935]
+position = Vector2(4, 0)
 
 [node name="Cave" type="TextureButton" parent="." unique_id=2042417720]
 offset_left = -514.0
