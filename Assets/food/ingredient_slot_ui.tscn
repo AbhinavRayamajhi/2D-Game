@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bau2c4mj4fd4w" path="res://Assets/food/images/inventory-slot.png" id="1_2ix42"]
 [ext_resource type="Script" uid="uid://c24nw5crppiao" path="res://Assets/food/ingredient_slot_ui.gd" id="1_dv2dr"]
 [ext_resource type="PackedScene" uid="uid://di5lg063mnw3c" path="res://Assets/food/food_display.tscn" id="3_gis5t"]
+[ext_resource type="FontFile" uid="uid://05urw78xhqho" path="res://Assets/Pixelated Elegance.ttf" id="4_2f72u"]
 
 [node name="ingredient_slot_ui" type="Panel" unique_id=1791511407]
 self_modulate = Color(1, 1, 1, 0)
@@ -28,3 +29,22 @@ layout_mode = 2
 [node name="food_display" parent="CenterContainer" unique_id=1788165784 instance=ExtResource("3_gis5t")]
 position = Vector2(8, 8)
 scale = Vector2(0.4451337, 0.4451337)
+
+[node name="Label" type="Label" parent="." unique_id=1037177071]
+custom_maximum_size = Vector2(-1, 15)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0400001
+offset_left = -11.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = 5.3599987
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_2f72u")
+theme_override_font_sizes/font_size = 3
+text = "hello
+"
