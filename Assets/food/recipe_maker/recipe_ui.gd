@@ -95,7 +95,7 @@ func _on_back_pressed():
 
 func _on_eat_pressed():
 	if Global.eat_food():
-		$EatMessage.text = "Yummy! +250 Stamina!"
+		$EatMessage.text = "Yummy! More Stamina!"
 	else:
 		$EatMessage.text = "No cooked food!"
 

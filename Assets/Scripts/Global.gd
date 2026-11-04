@@ -40,11 +40,17 @@ func use_ingredients(ingredients : Dictionary):
 		
 
 func eat_food():
-	for food_name in ["Cheese Sandwich", "Deluxe Burger", "Breakfast Sandwich"]:
+	var food_stamina = {
+		"Cheese Sandwich": 150,
+		"Breakfast Sandwich": 250,
+		"Deluxe Burger": 400
+	}
+
+	for food_name in food_stamina:
 		if inventory.get(food_name, 0) > 0:
 			inventory[food_name] -= 1
-			stamina = min(stamina + 250, 1000)
-			print("Food eaten! Stamina: ", stamina)
+			stamina = min(stamina + food_stamina[food_name], 1000)
+			print("Ate ", food_name, "! +", food_stamina[food_name], " stamina")
 			return true
 
 	print("No cooked food!")
