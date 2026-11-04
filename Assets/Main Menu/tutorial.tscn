@@ -111,7 +111,7 @@ bbcode_enabled = true
 text = "[ul]
 Movement, Jump and Boost consume stamina.
 Stamina DOES NOT REGENERATE.
-Collect coins and ingredients to buy and make food.
+Collect ingredients to buy and make food.
 Food gives you stamina.
 Avoid the mafia member chasing you, he will drain your stamina.
 If you run out of stamina, you fail the level and have to restart the level.
